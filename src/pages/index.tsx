@@ -399,38 +399,66 @@ function Experience(){
 }
 
 function Projects(){
-  const featured = [
-    { 
-      title: "Real-time Messenger App", 
-      desc: "Featured by BrainStation - Full-featured messaging platform with text, media, and location sharing.", 
-      tech: "React • Node.js • Socket.io • MongoDB", 
-      link: "https://github.com/nimamot",
-      emoji: "💬",
-      color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20"
+  // Separate projects into two categories
+  const softwareEngineering = [
+    {
+      title: "peerAdvice (nwHacks Hackathon)",
+      desc: "Designed and developed a peer-to-peer advising platform utilizing Python, Flask, and PostgreSQL with user authentication implemented through Google OAuth and Firebase and appointment scheduling via Calendly API. Incorporated front-end technologies such as HTML, CSS, and JavaScript to create an intuitive interface and smooth user experience. Applied Agile methodologies for efficient project management and collaboration resulting in a functional and user-friendly solution.",
+      tech: "Python • Flask • PostgreSQL • Google OAuth • Firebase • Calendly API • HTML • CSS • JavaScript",
+      link: "#", // Add actual link if available
+      color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=200&q=80" // Teamwork/peer advice
     },
-    { 
-      title: "Notes Buddy", 
-      desc: "Educational platform for lecture notes and exam preparation, powered by AWS and WordPress.", 
-      tech: "AWS • Apache2 • SQL • WordPress", 
-      link: "https://github.com/nimamot",
-      emoji: "📚",
-      color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20"
+    {
+      title: "iOS Messenger App (Featured by Brain Station)",
+      desc: "Constructed a messenger app for iOS. The program allowed the user to create an account with their email address, login to their account, search for other users, and share texts, pictures, videos, and locations. User authentication is handled through FireBase cloud services. Users data (username, email, previous conversations) is also stored on FireBase so that the users can see their data when they log back in to their account. The app was developed with Swift and Ruby.",
+      tech: "Swift • Ruby • Firebase • iOS",
+      link: "#", // Add actual link if available
+      color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20",
+      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=80" // iOS Messenger (phone chat)
     },
-    { 
-      title: "Binance Console App", 
-      desc: "Cryptocurrency trading platform with real-time price checking and order management.", 
-      tech: "Python • Binance API • Console UI", 
-      link: "https://github.com/nimamot",
-      emoji: "₿",
-      color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20"
+    {
+      title: "Personal Website",
+      desc: "Portfolio site built with Django and deployed on PythonAnywhere. Features project showcases, notes, and a blog.",
+      tech: "Django • HTML • CSS • PythonAnywhere",
+      link: "https://nimamot.pythonanywhere.com/",
+      color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=200&q=80" // Website/portfolio
     },
-    { 
-      title: "Spanish Learning Website", 
-      desc: "Interactive Spanish learning platform with song-based vocabulary and grammar practice.", 
-      tech: "Django • HTML • CSS • PythonAnywhere", 
+    {
+      title: "Spanish Learning Website",
+      desc: "Interactive Spanish learning platform with song-based vocabulary and grammar practice.",
+      tech: "Django • HTML • CSS • PythonAnywhere",
       link: "https://nimamot.pythonanywhere.com/espanol",
-      emoji: "🇪🇸",
-      color: "from-orange-50 to-red-100 dark:from-orange-900/20 dark:to-red-900/20"
+      color: "from-orange-50 to-red-100 dark:from-orange-900/20 dark:to-red-900/20",
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" // Spanish flag
+    },
+  ];
+
+  const dataScience = [
+    {
+      title: "Automated Financial Analysis Pipeline",
+      desc: "Designed and implemented a scalable data pipeline using AWS Lambda, S3, and DynamoDB to automate financial statement analysis. Processed user-uploaded financial statements in CSV format, conducted comprehensive analyses, and generated detailed PDF reports. Developed advanced data analysis features, including flagged transaction detection, spending trend visualization, and recurring transaction analysis, leveraging Python for data processing and visualization. Integrated cloud-based solutions for seamless data ingestion, analysis, and storage, highlighting the intersection of cloud computing and data science.",
+      tech: "AWS Lambda • S3 • DynamoDB • Python • Data Science • Cloud Computing",
+      link: "#",
+      color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80" // Cloud data pipeline
+    },
+    {
+      title: "Bitcoin Price Prediction",
+      desc: "Built a series of models, including Linear Regression, KNN, Random Forest, XGBoost, CatBoost, and LSTM, to forecast Bitcoin prices. Employed feature engineering techniques and hyperparameter optimization to enhance model accuracy and capture temporal dependencies. Developed preprocessing pipelines and utilized advanced regression analysis to uncover meaningful patterns in time-series data.",
+      tech: "Python • Machine Learning • XGBoost • CatBoost • LSTM • Time Series • Feature Engineering",
+      link: "#",
+      color: "from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20",
+      image: "https://www.ccn.com/wp-content/uploads/2025/07/bitcoin-price-breakout-or-breakdown-1536x864.webp" // Bitcoin coin and chart
+    },
+    {
+      title: "Sports Hub",
+      desc: "Implemented a relational database for sports management using Oracle DB and SQL, focusing on comprehensive data organization. Enhanced user experience by incorporating advanced SQL operations, facilitating powerful data manipulation and insights. Designed a user-friendly web interface for efficient database interaction, featuring error handling and input validation.",
+      tech: "Oracle DB • SQL • Data Visualization • Web Interface • Data Management",
+      link: "#",
+      color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
+      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" // Sports analytics dashboard
     },
   ];
   
@@ -441,15 +469,90 @@ function Projects(){
     { title: "Systematic Program Design", desc: "Notes and projects for CPSC 110", tech: "Racket • Functional Programming", emoji: "🎯" },
   ];
   
+  // Helper to render a project card (collapsible)
+  function CollapsibleProjectCard({ project }: { project: any }) {
+    const [open, setOpen] = React.useState(false);
+        return (
+          <div className={`w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm mb-8 transition-all ${open ? 'ring-2 ring-blue-300' : ''}`}> 
+        <button
+          className="w-full flex items-center gap-6 px-8 py-8 text-left focus:outline-none"
+          style={{ minHeight: '120px' }}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {project.image && (
+            <img src={project.image} alt={project.title} className="w-20 h-20 object-cover rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mr-4" />
+          )}
+          <div className="flex-1">
+            <div className="flex items-center gap-2">
+              <span className="text-3xl font-bold text-gray-900 dark:text-white">{project.title}</span>
+              {project.emoji && <span className="ml-1 text-xl">{project.emoji}</span>}
+            </div>
+          </div>
+          <span className="ml-4 flex items-center justify-center">
+            <svg
+              className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+              width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="10,15 18,23 26,15"
+                stroke="#1A1A22"
+                strokeWidth="3.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+        </button>
+        {open && (
+          <div className="px-8 pb-8">
+            {project.desc && (
+              <div className="text-lg text-gray-600 dark:text-gray-300 mb-4">{project.desc}</div>
+            )}
+            {project.date && (
+              <div className="text-lg font-bold text-gray-900 dark:text-white mb-2 mt-2 flex items-center gap-2">
+                <span className="text-xl">📍</span> {project.date}
+              </div>
+            )}
+            {project.full && (
+              <div className="text-gray-700 dark:text-gray-200 text-base mb-4">{project.full}</div>
+            )}
+            {project.tags && (
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tags.map((tag: string, i: number) => (
+                  <span key={i} className="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-200 rounded-lg text-xs font-medium">{tag}</span>
+                ))}
+              </div>
+            )}
+            {project.link && project.link !== '#' && (
+              <a href={project.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline mt-2 text-sm">View Project <ExternalLink className="h-4 w-4"/></a>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Merge and group projects for single-column display
+  const allProjects = [
+    { section: 'Software Engineering', projects: softwareEngineering },
+    { section: 'Data Science', projects: dataScience }
+  ];
+
   return (
     <section id="projects" aria-label="Projects" className="py-16">
       <SectionHeader id="projects" title="Projects" />
-      <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {featured.map((p, i) => (
-          <ProjectCard key={i} {...p} index={i} />
+      <div className="mt-12 max-w-4xl mx-auto">
+        {allProjects.map((group, idx) => (
+          <div key={group.section} className="mb-12">
+            <h3 className="mb-8 text-3xl font-bold text-gray-900 dark:text-white text-left">{group.section}</h3>
+            {group.projects.map((p, i) => (
+              <CollapsibleProjectCard key={i} project={p} />
+            ))}
+          </div>
         ))}
       </div>
-      <div className="mx-auto mt-16 max-w-3xl">
+      {/* More Projects & Notes section remains unchanged */}
+      <div className="mx-auto mt-16 max-w-4xl">
         <h3 className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white">More Projects & Notes</h3>
         <div className="space-y-3">
           {more.map((m, i) => (
