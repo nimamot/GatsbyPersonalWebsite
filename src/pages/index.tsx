@@ -407,22 +407,25 @@ function Projects(){
   const softwareEngineering = [
     {
       title: "peerAdvice (nwHacks Hackathon)",
+      subtitle: "Peer-to-peer advising platform",
       desc: "Designed and developed a peer-to-peer advising platform utilizing Python, Flask, and PostgreSQL with user authentication implemented through Google OAuth and Firebase and appointment scheduling via Calendly API. Incorporated front-end technologies such as HTML, CSS, and JavaScript to create an intuitive interface and smooth user experience. Applied Agile methodologies for efficient project management and collaboration resulting in a functional and user-friendly solution.",
       tech: "Python • Flask • PostgreSQL • Google OAuth • Firebase • Calendly API • HTML • CSS • JavaScript",
-      link: "#", // Add actual link if available
+      link: "https://github.com/nimamot/peer_Advice",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=200&q=80" // Teamwork/peer advice
     },
     {
-      title: "iOS Messenger App (Featured by Brain Station)",
+      title: "mAssenger (Featured by Brain Station)",
+      subtitle: "iOS chat & media app",
       desc: "Constructed a messenger app for iOS. The program allowed the user to create an account with their email address, login to their account, search for other users, and share texts, pictures, videos, and locations. User authentication is handled through FireBase cloud services. Users data (username, email, previous conversations) is also stored on FireBase so that the users can see their data when they log back in to their account. The app was developed with Swift and Ruby.",
       tech: "Swift • Ruby • Firebase • iOS",
-      link: "#", // Add actual link if available
+      link: "https://github.com/nimamot/Massenger", 
       color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20",
       image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=80" // iOS Messenger (phone chat)
     },
     {
       title: "Personal Website",
+      subtitle: "Portfolio & blog site",
       desc: "Portfolio site built with Django and deployed on PythonAnywhere. Features project showcases, notes, and a blog.",
       tech: "Django • HTML • CSS • PythonAnywhere",
       link: "https://nimamot.pythonanywhere.com/",
@@ -430,34 +433,38 @@ function Projects(){
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=200&q=80" // Website/portfolio
     },
     {
-      title: "Spanish Learning Website",
+      title: "La Letra",
+      subtitle: "Spanish learning with music",
       desc: "Interactive Spanish learning platform with song-based vocabulary and grammar practice.",
       tech: "Django • HTML • CSS • PythonAnywhere",
-      link: "https://nimamot.pythonanywhere.com/espanol",
+      link: "https://nimamot.github.io/Spanish/",
       color: "from-orange-50 to-red-100 dark:from-orange-900/20 dark:to-red-900/20",
-      image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" // Spanish flag
+      image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
     },
   ];
 
   const dataScience = [
     {
       title: "Automated Financial Analysis Pipeline",
+      subtitle: "Cloud-based financial analytics",
       desc: "Designed and implemented a scalable data pipeline using AWS Lambda, S3, and DynamoDB to automate financial statement analysis. Processed user-uploaded financial statements in CSV format, conducted comprehensive analyses, and generated detailed PDF reports. Developed advanced data analysis features, including flagged transaction detection, spending trend visualization, and recurring transaction analysis, leveraging Python for data processing and visualization. Integrated cloud-based solutions for seamless data ingestion, analysis, and storage, highlighting the intersection of cloud computing and data science.",
       tech: "AWS Lambda • S3 • DynamoDB • Python • Data Science • Cloud Computing",
-      link: "#",
+      link: "https://github.com/nimamot/AWS-Financial-Data-Pipeline",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80" // Cloud data pipeline
     },
     {
       title: "Bitcoin Price Prediction",
+      subtitle: "Crypto price forecasting",
       desc: "Built a series of models, including Linear Regression, KNN, Random Forest, XGBoost, CatBoost, and LSTM, to forecast Bitcoin prices. Employed feature engineering techniques and hyperparameter optimization to enhance model accuracy and capture temporal dependencies. Developed preprocessing pipelines and utilized advanced regression analysis to uncover meaningful patterns in time-series data.",
       tech: "Python • Machine Learning • XGBoost • CatBoost • LSTM • Time Series • Feature Engineering",
-      link: "#",
+      link: "https://github.com/nimamot/Price_prediction",
       color: "from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20",
       image: "https://www.ccn.com/wp-content/uploads/2025/07/bitcoin-price-breakout-or-breakdown-1536x864.webp" // Bitcoin coin and chart
     },
     {
       title: "Sports Hub",
+      subtitle: "Sports data management",
       desc: "Implemented a relational database for sports management using Oracle DB and SQL, focusing on comprehensive data organization. Enhanced user experience by incorporating advanced SQL operations, facilitating powerful data manipulation and insights. Designed a user-friendly web interface for efficient database interaction, featuring error handling and input validation.",
       tech: "Oracle DB • SQL • Data Visualization • Web Interface • Data Management",
       link: "#",
@@ -487,10 +494,13 @@ function Projects(){
             <img src={project.image} alt={project.title} className="w-20 h-20 object-cover rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mr-4" />
           )}
           <div className="flex-1">
-            <div className="flex items-center gap-2">
+            <div>
               <span className="text-3xl font-bold text-gray-900 dark:text-white">{project.title}</span>
               {project.emoji && <span className="ml-1 text-xl">{project.emoji}</span>}
             </div>
+            {project.subtitle && (
+              <div className="text-lg font-medium text-gray-500 dark:text-gray-400 mt-1">{project.subtitle}</div>
+            )}
           </div>
           <span className="ml-4 flex items-center justify-center">
             <svg
@@ -511,6 +521,9 @@ function Projects(){
           <div className="px-8 pb-8">
             {project.desc && (
               <div className="text-lg text-gray-600 dark:text-gray-300 mb-4">{project.desc}</div>
+            )}
+            {project.tech && (
+              <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">{project.tech}</div>
             )}
             {project.date && (
               <div className="text-lg font-bold text-gray-900 dark:text-white mb-2 mt-2 flex items-center gap-2">
