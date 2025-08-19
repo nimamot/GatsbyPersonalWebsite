@@ -356,8 +356,12 @@ function Experience(){
               <motion.span 
                 className="text-gray-400 dark:text-gray-500 group-open:rotate-180 transition-transform duration-300 text-2xl"
                 whileHover={{ scale: 1.2 }}
+                style={{ display: 'flex', alignItems: 'center' }}
               >
-                ▾
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="16" cy="16" r="16" fill="white"/>
+                  <path d="M10 14L16 20L22 14" stroke="#19191C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </motion.span>
             </summary>
             
