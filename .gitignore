@@ -1,0 +1,55 @@
+# Node modules
+node_modules/
+
+# Build output
+public/
+.cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files
+.env
+.env.*
+
+# Misc
+*.local
+*.log
+
+# VSCode settings
+.vscode/
+
+# Gatsby specific
+.cache/
+
+# Mac system files
+Icon?
+
+# Static build output
+/static/
+
+# Ignore lock files if not using them for reproducible builds
+# package-lock.json
+yarn.lock
+
+# Ignore test coverage
+coverage/
+
+# Ignore gatsby telemetry
+.gatsby*
+
+# Ignore any private config
+*.secret
+
+# Ignore output from various tools
+*.tgz
+
+# Ignore Python cache if any
+__pycache__/
+*.pyc
