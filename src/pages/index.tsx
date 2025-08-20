@@ -406,6 +406,16 @@ function Projects(){
   // Separate projects into two categories
   const softwareEngineering = [
     {
+      title: "Quantitative Trading Analysis Platform",
+      subtitle: "Web-based financial analysis & backtesting",
+      desc: "Comprehensive quantitative trading analysis platform built with Streamlit providing real-time financial data analysis, technical indicators, backtesting capabilities, and sentiment analysis. Features include moving average crossover strategies, RSI mean reversion, volatility analysis, and multi-source sentiment analysis from Reddit and Google News using VADER sentiment analysis.",
+      tech: "Python • Streamlit • Pandas • NumPy • Plotly • Yahoo Finance API • VADER Sentiment",
+      link: "https://quantalgo.streamlit.app",
+      github: "https://github.com/shariqimran/Quant",
+      color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
+      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80" // Trading charts
+    },
+    {
       title: "peerAdvice (nwHacks Hackathon)",
       subtitle: "Peer-to-peer advising platform",
       desc: "Designed and developed a peer-to-peer advising platform utilizing Python, Flask, and PostgreSQL with user authentication implemented through Google OAuth and Firebase and appointment scheduling via Calendly API. Incorporated front-end technologies such as HTML, CSS, and JavaScript to create an intuitive interface and smooth user experience. Applied Agile methodologies for efficient project management and collaboration resulting in a functional and user-friendly solution.",
@@ -421,16 +431,7 @@ function Projects(){
       tech: "Swift • Ruby • Firebase • iOS",
       link: "https://github.com/nimamot/Massenger", 
       color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20",
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=80" // iOS Messenger (phone chat)
-    },
-    {
-      title: "Personal Website",
-      subtitle: "Portfolio & blog site",
-      desc: "Portfolio site built with Django and deployed on PythonAnywhere. Features project showcases, notes, and a blog.",
-      tech: "Django • HTML • CSS • PythonAnywhere",
-      link: "https://nimamot.pythonanywhere.com/",
-      color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=200&q=80" // Website/portfolio
+      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=200" // iOS Messenger (phone chat)
     },
     {
       title: "La Letra",
@@ -474,10 +475,11 @@ function Projects(){
   ];
   
   const more = [
-    { title: "Personal Website", desc: "Portfolio site built with Django and deployed on PythonAnywhere", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐" },
-    { title: "Ethical Hacking Projects", desc: "Various cybersecurity and penetration testing tools", tech: "Python • Kali Linux • Security Tools", emoji: "🔒" },
-    { title: "Software Construction Notes", desc: "Comprehensive notes for CPSC 210 at UBC", tech: "Java • OOP • Design Patterns", emoji: "📝" },
-    { title: "Systematic Program Design", desc: "Notes and projects for CPSC 110", tech: "Racket • Functional Programming", emoji: "🎯" },
+    { title: "Personal Website", desc: "Modern portfolio site with animations and dark mode", tech: "Gatsby • React • TypeScript • Tailwind CSS • Framer Motion", emoji: "🌐", github: "" },
+    { title: "Old Personal Website", desc: "Portfolio site with projects and blog", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐", github: "" },
+    { title: "Ethical Hacking Projects", desc: "Various cybersecurity and penetration testing tools", tech: "Python • Kali Linux • Security Tools", emoji: "🔒", github: "" },
+    { title: "Software Construction Notes", desc: "Comprehensive notes for CPSC 210 at UBC", tech: "Java • OOP • Design Patterns", emoji: "📝", github: "" },
+    { title: "Systematic Program Design", desc: "Notes and projects for CPSC 110", tech: "Racket • Functional Programming", emoji: "🎯", github: "" },
   ];
   
   // Helper to render a project card (collapsible)
@@ -523,7 +525,21 @@ function Projects(){
               <div className="text-lg text-gray-600 dark:text-gray-300 mb-4">{project.desc}</div>
             )}
             {project.tech && (
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">{project.tech}</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center justify-between">
+                <span>{project.tech}</span>
+                {project.github && (
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="h-4 w-4 text-gray-900 dark:text-gray-100" />
+                  </motion.a>
+                )}
+              </div>
             )}
             {project.date && (
               <div className="text-lg font-bold text-gray-900 dark:text-white mb-2 mt-2 flex items-center gap-2">
@@ -593,14 +609,32 @@ function Projects(){
                   <span className="text-gray-900 dark:text-white">{m.title}</span>
                   <span className="text-sm text-gray-500 dark:text-gray-400">{m.desc}</span>
                 </div>
-                <motion.span 
-                  className="text-gray-400 dark:text-gray-500 transition-transform duration-300"
+                <motion.svg
+                  className="w-5 h-5 text-gray-900 dark:text-gray-100 transition-transform duration-300"
                   whileHover={{ scale: 1.2 }}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  ▾
-                </motion.span>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </motion.svg>
               </summary>
-              <div className="pt-4 pl-12 text-sm text-gray-600 dark:text-gray-300">{m.tech}</div>
+              <div className="pt-4 pl-12 text-sm text-gray-600 dark:text-gray-300 flex items-center justify-between">
+                <span>{m.tech}</span>
+                {m.github && m.github !== "" ? (
+                  <motion.a
+                    href={m.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Github className="h-4 w-4 text-gray-900 dark:text-gray-100" />
+                  </motion.a>
+                ) : null}
+              </div>
             </motion.details>
           ))}
         </div>
