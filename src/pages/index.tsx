@@ -416,6 +416,15 @@ function Projects(){
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80" // Trading charts
     },
     {
+      title: "TripExpense - Modern Trip Expense Tracker",
+      subtitle: "Full-stack expense splitting application",
+      desc: "Full-stack web application that revolutionizes how friends split and track expenses during trips. Features smart expense tracking with automatic equal splitting, real-time balance calculation, group management with shareable links, comprehensive dashboard, CSV export, and AI-powered settlement suggestions. Built with modern technologies for seamless, secure, and intuitive group finance management.",
+      tech: "Next.js 14 • TypeScript • Tailwind CSS • Supabase • PostgreSQL • Vercel • Framer Motion",
+      link: "#",
+      color: "from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80" // Travel/expense tracking
+    },
+    {
       title: "peerAdvice (nwHacks Hackathon)",
       subtitle: "Peer-to-peer advising platform",
       desc: "Designed and developed a peer-to-peer advising platform utilizing Python, Flask, and PostgreSQL with user authentication implemented through Google OAuth and Firebase and appointment scheduling via Calendly API. Incorporated front-end technologies such as HTML, CSS, and JavaScript to create an intuitive interface and smooth user experience. Applied Agile methodologies for efficient project management and collaboration resulting in a functional and user-friendly solution.",
