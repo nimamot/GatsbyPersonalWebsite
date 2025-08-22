@@ -229,61 +229,48 @@ function About(){
   return (
     <section id="about" aria-label="About" className="py-20">
       <SectionHeader id="about" title="About Me" />
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <div className="mt-16 flex justify-center">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="flex gap-6"
         >
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" 
-              alt="profile" 
-              className="rounded-2xl w-full shadow-lg" 
-            />
-            <motion.div 
-              animate={{ rotate: [0, 360] }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute -bottom-2 -right-2 bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg"
-            >
-              <Coffee className="h-6 w-6 text-gray-600 dark:text-gray-300" />
-            </motion.div>
-          </div>
-          <div className="mt-8 flex gap-6 justify-center">
-            <motion.a 
-              href="https://github.com/nimamot" 
-              target="_blank" 
-              rel="noreferrer"
-              className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Github className="h-6 w-6 text-gray-900 dark:text-gray-100" />
-            </motion.a>
-            <motion.a 
-              href="https://www.linkedin.com/in/nima-motieifard/" 
-              target="_blank" 
-              rel="noreferrer"
-              className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Linkedin className="h-6 w-6 text-gray-900 dark:text-gray-100" />
-            </motion.a>
-            <motion.a 
-              href="mailto:nima@example.com"
-              className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Mail className="h-6 w-6 text-gray-900 dark:text-gray-100" />
-            </motion.a>
-          </div>
+          <motion.a 
+            href="https://github.com/nimamot" 
+            target="_blank" 
+            rel="noreferrer"
+            className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Github className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+          </motion.a>
+          <motion.a 
+            href="https://www.linkedin.com/in/nima-motieifard/" 
+            target="_blank" 
+            rel="noreferrer"
+            className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Linkedin className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+          </motion.a>
+          <motion.a 
+            href="mailto:nima@example.com"
+            className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Mail className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+          </motion.a>
         </motion.div>
+      </div>
+      <div className="mt-16 max-w-3xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="space-y-6"
@@ -296,7 +283,7 @@ function About(){
             This site is my little corner of the internet where I share projects, thoughts, and whatever else comes to mind. Feel free to explore around!
           </p>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            If anything catches your eye or you just want to connect, my socials are right below my picture and in the footer. Always up for a coffee chat or Formula 1 discussion! :')
+            If anything catches your eye or you just want to connect, my socials are above and in the footer. Always up for a coffee chat or Formula 1 discussion! :')
           </p>
         </motion.div>
       </div>
@@ -595,7 +582,7 @@ function Projects(){
       </div>
       {/* More Projects & Notes section remains unchanged */}
       <div className="mx-auto mt-16 max-w-4xl">
-        <h3 className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white">More Projects & Notes</h3>
+        <h3 className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white">More Projects</h3>
         <div className="space-y-3">
           {more.map((m, i) => (
             <motion.details 
@@ -865,7 +852,7 @@ function Fun(){
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Current Focus</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6"></h3>
           <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm h-[500px] overflow-y-auto">
             <div className="flex items-center gap-3 mb-4">
               <motion.div 
