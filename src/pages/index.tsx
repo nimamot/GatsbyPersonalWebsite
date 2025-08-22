@@ -257,14 +257,14 @@ function About(){
           >
             <Linkedin className="h-6 w-6 text-gray-900 dark:text-gray-100" />
           </motion.a>
-          <motion.a 
-            href="mailto:nima@example.com"
-            className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Mail className="h-6 w-6 text-gray-900 dark:text-gray-100" />
-          </motion.a>
+                      <motion.a 
+              href="mailto:nima.motieifard@gmail.com"
+              className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+            </motion.a>
         </motion.div>
       </div>
       <div className="mt-16 max-w-3xl mx-auto">
@@ -408,6 +408,7 @@ function Projects(){
       desc: "Full-stack web application that revolutionizes how friends split and track expenses during trips. Features smart expense tracking with automatic equal splitting, real-time balance calculation, group management with shareable links, comprehensive dashboard, CSV export, and AI-powered settlement suggestions. Built with modern technologies for seamless, secure, and intuitive group finance management.",
       tech: "Next.js 14 • TypeScript • Tailwind CSS • Supabase • PostgreSQL • Vercel • Framer Motion",
       link: "#",
+      github: "https://github.com/nimamot/TripExpense",
       color: "from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20",
       image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80" // Travel/expense tracking
     },
@@ -465,17 +466,15 @@ function Projects(){
       desc: "Implemented a relational database for sports management using Oracle DB and SQL, focusing on comprehensive data organization. Enhanced user experience by incorporating advanced SQL operations, facilitating powerful data manipulation and insights. Designed a user-friendly web interface for efficient database interaction, featuring error handling and input validation.",
       tech: "Oracle DB • SQL • Data Visualization • Web Interface • Data Management",
       link: "#",
+      github: "https://github.com/nimamot/SportsStats",
       color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
       image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" // Sports analytics dashboard
     },
   ];
   
   const more = [
-    { title: "Personal Website", desc: "Modern portfolio site with animations and dark mode", tech: "Gatsby • React • TypeScript • Tailwind CSS • Framer Motion", emoji: "🌐", github: "" },
-    { title: "Old Personal Website", desc: "Portfolio site with projects and blog", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐", github: "" },
-    { title: "Ethical Hacking Projects", desc: "Various cybersecurity and penetration testing tools", tech: "Python • Kali Linux • Security Tools", emoji: "🔒", github: "" },
-    { title: "Software Construction Notes", desc: "Comprehensive notes for CPSC 210 at UBC", tech: "Java • OOP • Design Patterns", emoji: "📝", github: "" },
-    { title: "Systematic Program Design", desc: "Notes and projects for CPSC 110", tech: "Racket • Functional Programming", emoji: "🎯", github: "" },
+    { title: "Personal Website", desc: "Modern portfolio site with animations and dark mode", tech: "Gatsby • React • TypeScript • Tailwind CSS • Framer Motion", emoji: "🌐", github: "https://github.com/nimamot/GatsbyPersonalWebsite" },
+    { title: "Old Personal Website", desc: "Portfolio site with projects and blog", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐", github: "https://github.com/nimamot/Personal-Website" },
   ];
   
   // Helper to render a project card (collapsible)
@@ -934,10 +933,7 @@ function Contact(){
         transition={{ duration: 0.6 }}
       >
         <p className="text-gray-600 dark:text-gray-300 text-center">
-          Email <a href="mailto:nima@example.com" className="underline font-medium text-gray-900 dark:text-white">nima@example.com</a>. Based in Vancouver, BC.
-        </p>
-        <p className="text-sm text-gray-500 dark:text-gray-400 text-center mt-4">
-          Check out my <a href="https://nimamot.pythonanywhere.com/" target="_blank" rel="noreferrer" className="underline">current website</a> for more projects and notes.
+          Email <a href="mailto:nima.motieifard@gmail.com" className="underline font-medium text-gray-900 dark:text-white">nima.motieifard@gmail.com</a>. Based in Vancouver, BC.
         </p>
       </motion.div>
     </section>
@@ -953,11 +949,8 @@ function Footer(){
       <IconLink href="https://www.linkedin.com/in/nima-motieifard/" label="LinkedIn">
         <Linkedin className="h-4 w-4"/> LinkedIn
       </IconLink>
-      <IconLink href="mailto:nima@example.com" label="Email">
+              <IconLink href="mailto:nima.motieifard@gmail.com" label="Email">
         <Mail className="h-4 w-4"/> Email
-      </IconLink>
-      <IconLink href="https://nimamot.pythonanywhere.com/" label="Website">
-        <ExternalLink className="h-4 w-4"/> Website
       </IconLink>
       <span className="ml-2">© {new Date().getFullYear()} Nima :')</span>
     </footer>
