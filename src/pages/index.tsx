@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, ExternalLink, Youtube, Coffee } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Youtube, Coffee, Code, Shield, BarChart3, Bot, Sparkles, Zap, Rocket, Cloud, Sprout } from "lucide-react";
 import { motion } from "framer-motion";
 import Nav from "@/components/Nav";
 import Typewriter from "@/components/Typewriter";
@@ -93,7 +93,61 @@ function IconLink({ href, label, children }: { href: string; label: string; chil
 function Hero(){
   return (
     <section className="relative overflow-hidden pt-24 sm:pt-28" aria-label="Hero">
-              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16">
+      {/* Animated Clouds */}
+      <motion.div 
+        animate={{ x: [0, 100, 0] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="absolute top-8 left-10 text-gray-300 dark:text-gray-600 opacity-60"
+      >
+        <Cloud className="w-12 h-12" />
+      </motion.div>
+      <motion.div 
+        animate={{ x: [0, -80, 0] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 5 }}
+        className="absolute top-16 right-20 text-gray-300 dark:text-gray-600 opacity-50"
+      >
+        <Cloud className="w-10 h-10" />
+      </motion.div>
+      <motion.div 
+        animate={{ x: [0, 120, 0] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 10 }}
+        className="absolute top-24 left-1/4 text-gray-300 dark:text-gray-600 opacity-40"
+      >
+        <Cloud className="w-8 h-8" />
+      </motion.div>
+      
+      {/* Animated Grass */}
+      <motion.div 
+        animate={{ y: [0, -5, 0] }}
+        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-2 left-16 text-green-400 dark:text-green-600"
+      >
+        <Sprout className="w-6 h-6" />
+      </motion.div>
+      <motion.div 
+        animate={{ y: [0, -3, 0] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        className="absolute bottom-0 right-24 text-green-500 dark:text-green-500"
+      >
+        <Sprout className="w-5 h-5" />
+      </motion.div>
+      <motion.div 
+        animate={{ y: [0, -4, 0] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-4 left-1/3 text-green-600 dark:text-green-400"
+      >
+        <Sprout className="w-4 h-4" />
+      </motion.div>
+      <motion.div 
+        animate={{ y: [0, -2, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        className="absolute bottom-1 right-1/3 text-green-400 dark:text-green-600"
+      >
+        <Sprout className="w-3 h-3" />
+      </motion.div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16">
+        {/* Text Section */}
         <div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
@@ -113,158 +167,168 @@ function Hero(){
           </motion.h1>
           <Typewriter 
             className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium" 
-            phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover ☕", "I like building useful things"]} 
+            phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover", "I like building useful things"]} 
           />
         </div>
+        
+        {/* Character Section */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ delay: 0.3, duration: 0.8 }}
           className="relative mx-auto w-64 sm:w-80 md:w-96"
         >
-          {/* Floating animated elements */}
+          {/* Main Character */}
           <motion.div 
             animate={{ 
-              y: [0, -20, 0],
-              rotate: [0, 5, -5, 0]
+              y: [0, -10, 0],
+              rotate: [0, 2, -2, 0]
             }}
             transition={{ 
-              duration: 6, 
+              duration: 4, 
               repeat: Infinity, 
               ease: "easeInOut" 
             }}
-            className="absolute -top-8 -left-8 text-4xl text-blue-400 dark:text-blue-300"
+            className="relative flex justify-center"
           >
-            💻
+            {/* Human Character */}
+            <div className="relative">
+              {/* Head */}
+              <div className="w-20 h-20 bg-gray-800 dark:bg-gray-200 rounded-full flex items-center justify-center mb-2">
+                              <div className="w-16 h-16 bg-gray-600 dark:bg-gray-400 rounded-full flex items-center justify-center">
+                <Code className="w-8 h-8 text-white dark:text-gray-800" />
+              </div>
+              </div>
+              
+              {/* Body */}
+              <div className="w-16 h-20 bg-blue-500 dark:bg-blue-600 rounded-full mx-auto"></div>
+              
+              {/* Arms */}
+              <div className="absolute top-8 -left-2 w-4 h-12 bg-blue-500 dark:bg-blue-600 rounded-full transform -rotate-12"></div>
+              <div className="absolute top-8 -right-2 w-4 h-12 bg-blue-500 dark:bg-blue-600 rounded-full transform rotate-12"></div>
+              
+              {/* Legs */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2">
+                <div className="w-3 h-8 bg-gray-800 dark:bg-gray-200 rounded-full"></div>
+                <div className="w-3 h-8 bg-gray-800 dark:bg-gray-200 rounded-full"></div>
+              </div>
+              
+              {/* Sparkles around character */}
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.3, 1],
+                  opacity: [0.5, 1, 0.5],
+                  rotate: [0, 360]
+                }}
+                transition={{ 
+                  duration: 3, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -top-4 -right-4 text-yellow-400"
+              >
+                <Sparkles className="w-6 h-6" />
+              </motion.div>
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.3, 1, 0.3],
+                  rotate: [0, -360]
+                }}
+                transition={{ 
+                  duration: 2.5, 
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                className="absolute -bottom-2 -left-2 text-blue-400"
+              >
+                <Zap className="w-5 h-5" />
+              </motion.div>
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.4, 1],
+                  opacity: [0.6, 1, 0.6],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{ 
+                  duration: 4, 
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+                className="absolute top-4 -left-4 text-purple-400"
+              >
+                <Rocket className="w-4 h-4" />
+              </motion.div>
+            </div>
           </motion.div>
           
+          {/* Companion Dog */}
           <motion.div 
             animate={{ 
-              y: [0, 15, 0],
-              x: [0, 10, 0]
+              y: [0, -5, 0],
+              x: [0, 3, 0]
             }}
             transition={{ 
-              duration: 8, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 1
-            }}
-            className="absolute -top-4 -right-4 text-3xl text-green-400 dark:text-green-300"
-          >
-            🔒
-          </motion.div>
-          
-          <motion.div 
-            animate={{ 
-              y: [0, -15, 0],
-              rotate: [0, 360]
-            }}
-            transition={{ 
-              duration: 10, 
-              repeat: Infinity, 
-              ease: "easeInOut",
-              delay: 2
-            }}
-            className="absolute top-1/2 -left-12 text-3xl text-purple-400 dark:text-purple-300"
-          >
-            📊
-          </motion.div>
-          
-          <motion.div 
-            animate={{ 
-              y: [0, 20, 0],
-              x: [0, -10, 0]
-            }}
-            transition={{ 
-              duration: 7, 
+              duration: 2, 
               repeat: Infinity, 
               ease: "easeInOut",
               delay: 0.5
             }}
-            className="absolute top-1/2 -right-12 text-3xl text-orange-400 dark:text-orange-300"
+            className="absolute bottom-0 left-1/4"
           >
-            🤖
+            <div className="relative">
+              {/* Dog body */}
+              <div className="w-12 h-8 bg-amber-600 dark:bg-amber-700 rounded-full"></div>
+              {/* Dog head */}
+              <div className="w-8 h-8 bg-amber-500 dark:bg-amber-600 rounded-full absolute -top-2 -left-1"></div>
+              {/* Dog ears */}
+              <div className="w-3 h-4 bg-amber-400 dark:bg-amber-500 rounded-full absolute -top-3 -left-2 transform -rotate-12"></div>
+              <div className="w-3 h-4 bg-amber-400 dark:bg-amber-500 rounded-full absolute -top-3 left-1 transform rotate-12"></div>
+              {/* Dog tail */}
+              <motion.div 
+                animate={{ rotate: [0, 20, -20, 0] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="w-6 h-2 bg-amber-600 dark:bg-amber-700 rounded-full absolute -right-2 top-2 transform rotate-45"
+              ></motion.div>
+            </div>
           </motion.div>
           
+          {/* Companion Robot */}
           <motion.div 
             animate={{ 
-              y: [0, -10, 0],
-              scale: [1, 1.1, 1]
+              y: [0, -8, 0],
+              rotate: [0, 5, -5, 0]
             }}
             transition={{ 
-              duration: 5, 
+              duration: 3, 
               repeat: Infinity, 
               ease: "easeInOut",
-              delay: 1.5
+              delay: 1
             }}
-            className="absolute -bottom-6 left-1/4 text-3xl text-pink-400 dark:text-pink-300"
+            className="absolute top-4 right-1/4"
           >
-            ☕
+            <div className="relative">
+              <div className="w-10 h-10 bg-gray-400 dark:bg-gray-600 rounded-full flex items-center justify-center">
+                <Bot className="w-6 h-6 text-white dark:text-gray-800" />
+              </div>
+              <motion.div 
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 1, 0.5]
+                }}
+                transition={{ 
+                  duration: 2, 
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -top-1 -right-1 text-blue-400"
+              >
+                <Zap className="w-3 h-3" />
+              </motion.div>
+            </div>
           </motion.div>
-
-          <div className="relative aspect-square w-full rounded-3xl bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/20 dark:via-indigo-900/20 dark:to-purple-900/20 border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden shadow-lg">
-            <motion.div 
-              animate={{ 
-                y: [0, -8, 0],
-                rotate: [0, 2, -2, 0]
-              }}
-              transition={{ 
-                duration: 4, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }}
-              className="text-8xl"
-            >
-              🧑🏻‍💻
-            </motion.div>
-            
-            {/* Inner floating elements */}
-            <motion.div 
-              animate={{ 
-                rotate: [0, 360],
-                scale: [1, 1.2, 1]
-              }}
-              transition={{ 
-                duration: 15, 
-                repeat: Infinity, 
-                ease: "linear" 
-              }}
-              className="absolute top-6 right-6 text-2xl"
-            >
-              ✨
-            </motion.div>
-            
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.3, 1],
-                rotate: [0, -360]
-              }}
-              transition={{ 
-                duration: 12, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }}
-              className="absolute top-6 left-6 text-2xl"
-            >
-              ⚡
-            </motion.div>
-            
-            <motion.div 
-              animate={{ 
-                y: [0, -5, 0],
-                x: [0, 3, 0]
-              }}
-              transition={{ 
-                duration: 6, 
-                repeat: Infinity, 
-                ease: "easeInOut",
-                delay: 1
-              }}
-              className="absolute bottom-6 left-1/3 text-2xl"
-            >
-              🚀
-            </motion.div>
-          </div>
         </motion.div>
       </div>
     </section>
@@ -751,7 +815,6 @@ function Fun(){
     { id: "finance", emoji: "💰", label: "Personal Finance", desc: "Budgeting & investing" },
     { id: "markets", emoji: "📈", label: "Financial Markets", desc: "Trading & analysis" },
     { id: "traveling", emoji: "✈️", label: "Traveling", desc: "Exploring new places" },
-    { id: "f1", emoji: "🏎️", label: "Formula 1", desc: "Racing & strategy" },
   ];
 
   const activityContent: Record<string, {
@@ -825,14 +888,6 @@ function Fun(){
       link: "#",
       linkText: "Travel Stories"
     },
-    f1: {
-      title: "Formula 1 🏎️",
-      subtitle: "Racing & strategy",
-      description: "Fast cars, wild strategy, and way too much yelling at the TV. F1 is my excuse to geek out over engineering and pretend I could totally drive like that (spoiler: I can’t).",
-      image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1200&auto=format&fit=crop",
-      link: "#",
-      linkText: "F1 Analysis"
-    }
   };
 
   const currentContent = activityContent[selectedActivity as keyof typeof activityContent];

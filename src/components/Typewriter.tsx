@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Coffee } from "lucide-react";
 
 interface TypewriterProps {
   phrases: string[];
@@ -42,12 +43,21 @@ export default function Typewriter({ phrases, className = "" }: TypewriterProps)
 
   return (
     <motion.div 
-      className={`${className} font-medium`}
+      className={`${className} font-medium flex items-center gap-2`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.6 }}
     >
       {currentText}
+      {currentText === "Coffee Lover" && (
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
+        >
+          <Coffee className="w-6 h-6 text-amber-600" />
+        </motion.div>
+      )}
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity }}
