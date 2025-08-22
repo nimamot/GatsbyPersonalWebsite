@@ -1,30 +1,76 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Mail, ExternalLink, Youtube, Coffee } from "lucide-react";
 import { motion } from "framer-motion";
 import Nav from "@/components/Nav";
 import Typewriter from "@/components/Typewriter";
 import { SectionHeader, Card, Divider } from "@/components/Section";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home(){
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time and preload images
+    const preloadImages = async () => {
+      const imageUrls = [
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80",
+        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80",
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=200&q=80",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=200",
+        "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80",
+        "https://www.ccn.com/wp-content/uploads/2025/07/bitcoin-price-breakout-or-breakdown-1536x864.webp",
+        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80",
+        "/static/robotics.png",
+        "/static/photography.png"
+      ];
+
+      try {
+        await Promise.all(
+          imageUrls.map(url => {
+            return new Promise((resolve, reject) => {
+              const img = new Image();
+              img.onload = resolve;
+              img.onerror = resolve; // Don't fail if image doesn't load
+              img.src = url;
+            });
+          })
+        );
+      } catch (error) {
+        console.log('Some images failed to preload');
+      }
+
+      // Minimum loading time of 2 seconds
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+    };
+
+    preloadImages();
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Nav />
-      <main className="mx-auto max-w-4xl px-4 sm:px-6">
-        <Hero />
-        <Divider />
-        <About />
-        <Divider />
-        <Experience />
-        <Divider />
-        <Projects />
-        <Divider />
-        <Fun />
-        <Divider />
-        <Contact />
-        <Footer />
-      </main>
-    </div>
+    <>
+      <LoadingScreen isLoading={isLoading} />
+      <div className="min-h-screen bg-white dark:bg-gray-900">
+        <Nav />
+        <main className="mx-auto max-w-4xl px-4 sm:px-6">
+          <Hero />
+          <Divider />
+          <About />
+          <Divider />
+          <Experience />
+          <Divider />
+          <Projects />
+          <Divider />
+          <Fun />
+          <Divider />
+          <Contact />
+          <Footer />
+        </main>
+      </div>
+    </>
   );
 }
 
