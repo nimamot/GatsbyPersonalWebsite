@@ -93,7 +93,7 @@ function IconLink({ href, label, children }: { href: string; label: string; chil
 function Hero(){
   return (
     <section className="relative overflow-hidden pt-24 sm:pt-28" aria-label="Hero">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16">
         <div>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
@@ -120,7 +120,7 @@ function Hero(){
           initial={{ opacity: 0, scale: 0.8 }} 
           animate={{ opacity: 1, scale: 1 }} 
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="relative mx-auto w-80 sm:w-96"
+          className="relative mx-auto w-64 sm:w-80 md:w-96"
         >
           {/* Floating animated elements */}
           <motion.div 
@@ -275,13 +275,13 @@ function About(){
   return (
     <section id="about" aria-label="About" className="py-20">
       <SectionHeader id="about" title="About Me" />
-      <div className="mt-16 flex justify-center">
+      <div className="mt-12 sm:mt-16 flex justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex gap-6"
+          className="flex gap-4 sm:gap-6"
         >
           <motion.a 
             href="https://github.com/nimamot" 
@@ -291,7 +291,7 @@ function About(){
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Github className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+                          <Github className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900 dark:text-gray-100" />
           </motion.a>
           <motion.a 
             href="https://www.linkedin.com/in/nima-motieifard/" 
@@ -301,15 +301,15 @@ function About(){
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Linkedin className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+                          <Linkedin className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900 dark:text-gray-100" />
           </motion.a>
                       <motion.a 
               href="mailto:nima.motieifard@gmail.com"
-              className="w-12 h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-gray-900 dark:border-gray-100 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Mail className="h-6 w-6 text-gray-900 dark:text-gray-100" />
+              <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-gray-900 dark:text-gray-100" />
             </motion.a>
         </motion.div>
       </div>
@@ -521,6 +521,8 @@ function Projects(){
   const more = [
     { title: "Personal Website", desc: "Modern portfolio site with animations and dark mode", tech: "Gatsby • React • TypeScript • Tailwind CSS • Framer Motion", emoji: "🌐", github: "https://github.com/nimamot/GatsbyPersonalWebsite" },
     { title: "Old Personal Website", desc: "Portfolio site with projects and blog", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐", github: "https://github.com/nimamot/Personal-Website" },
+    { title: "Earn Ace", desc: "Data analysis on Top 500 tennis players to predict career earnings using KNN-regression model", tech: "R • KNN Regression • Data Analysis • ggplot2 • Statistical Modeling", emoji: "🎾", github: "" },
+    { title: "NFT Bazaar", desc: "Java-based NFT marketplace application for buying and selling NFTs", tech: "Java • JSON • NFT Marketplace • User Management", emoji: "🖼️", github: "" },
   ];
   
   // Helper to render a project card (collapsible)
@@ -529,20 +531,20 @@ function Projects(){
         return (
           <div className={`w-full rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 shadow-sm mb-8 transition-all ${open ? 'ring-2 ring-blue-300' : ''}`}> 
         <button
-          className="w-full flex items-center gap-6 px-8 py-8 text-left focus:outline-none"
-          style={{ minHeight: '120px' }}
+          className="w-full flex items-center gap-4 sm:gap-6 px-4 sm:px-6 md:px-8 py-6 sm:py-8 text-left focus:outline-none"
+          style={{ minHeight: '100px' }}
           onClick={() => setOpen((v) => !v)}
         >
           {project.image && (
-            <img src={project.image} alt={project.title} className="w-20 h-20 object-cover rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mr-4" />
+            <img src={project.image} alt={project.title} className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 mr-3 sm:mr-4" />
           )}
           <div className="flex-1">
             <div>
-              <span className="text-3xl font-bold text-gray-900 dark:text-white">{project.title}</span>
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">{project.title}</span>
               {project.emoji && <span className="ml-1 text-xl">{project.emoji}</span>}
             </div>
             {project.subtitle && (
-              <div className="text-lg font-medium text-gray-500 dark:text-gray-400 mt-1">{project.subtitle}</div>
+              <div className="text-sm sm:text-lg font-medium text-gray-500 dark:text-gray-400 mt-1">{project.subtitle}</div>
             )}
           </div>
           <span className="ml-4 flex items-center justify-center">
@@ -561,12 +563,12 @@ function Projects(){
           </span>
         </button>
         {open && (
-          <div className="px-8 pb-8">
+          <div className="px-4 sm:px-6 md:px-8 pb-6 sm:pb-8">
             {project.desc && (
-              <div className="text-lg text-gray-600 dark:text-gray-300 mb-4">{project.desc}</div>
+              <div className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4">{project.desc}</div>
             )}
             {project.tech && (
-              <div className="text-sm text-gray-500 dark:text-gray-400 mb-4 flex items-center justify-between">
+              <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
                 <span>{project.tech}</span>
                 {project.github && (
                   <motion.a
@@ -848,7 +850,7 @@ function Fun(){
         There's more to life than just work and school so I'm a strong advocate for side quests in life :). From martial arts to financial markets, here are some of my notable adventures (click around!) ✨:
       </motion.p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -857,11 +859,11 @@ function Fun(){
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Side Quests</h3>
           <div className="bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-700 rounded-2xl p-6">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {sideQuests.map((quest, i) => (
                 <motion.div
                   key={quest.id}
-                  className={`flex items-center gap-3 p-3 rounded-lg transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg transition-all cursor-pointer ${
                     selectedActivity === quest.id 
                       ? 'bg-amber-200 dark:bg-amber-700/50 shadow-md' 
                       : 'hover:bg-amber-100 dark:hover:bg-amber-800/30'
@@ -882,8 +884,8 @@ function Fun(){
                     {quest.emoji}
                   </motion.div>
                   <div>
-                    <div className="font-semibold text-gray-900 dark:text-white">{quest.label}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-300">{quest.desc}</div>
+                    <div className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">{quest.label}</div>
+                    <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{quest.desc}</div>
                   </div>
                 </motion.div>
               ))}
@@ -898,7 +900,7 @@ function Fun(){
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6"></h3>
-          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-sm h-[500px] overflow-y-auto">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-4 sm:p-6 shadow-sm h-[400px] sm:h-[500px] overflow-y-auto">
             <div className="flex items-center gap-3 mb-4">
               <motion.div 
                 animate={{ scale: [1, 1.1, 1] }}
@@ -917,7 +919,7 @@ function Fun(){
               <img 
                 src={currentContent.image} 
                 alt={currentContent.title}
-                className="w-full h-80 object-contain rounded-lg mb-4"
+                className="w-full h-48 sm:h-64 md:h-80 object-contain rounded-lg mb-4"
               />
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {currentContent.description}
@@ -988,7 +990,7 @@ function Contact(){
 
 function Footer(){
   return (
-    <footer className="mt-16 mb-10 flex items-center justify-center gap-6 text-sm text-gray-600 dark:text-gray-400">
+    <footer className="mt-16 mb-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm text-gray-600 dark:text-gray-400">
       <IconLink href="https://github.com/nimamot" label="GitHub">
         <Github className="h-4 w-4"/> GitHub
       </IconLink>
@@ -998,7 +1000,7 @@ function Footer(){
               <IconLink href="mailto:nima.motieifard@gmail.com" label="Email">
         <Mail className="h-4 w-4"/> Email
       </IconLink>
-      <span className="ml-2">© {new Date().getFullYear()} Nima :')</span>
+      <span className="mt-2 sm:mt-0 sm:ml-2">© {new Date().getFullYear()} Nima :')</span>
     </footer>
   );
 }

@@ -21,12 +21,12 @@ export default function Nav() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="backdrop-blur bg-white/70 dark:bg-gray-900/70 border border-gray-200/70 dark:border-gray-700/70 shadow-lg rounded-full px-8 py-4 flex items-center gap-8">
+      <div className="backdrop-blur bg-white/70 dark:bg-gray-900/70 border border-gray-200/70 dark:border-gray-700/70 shadow-lg rounded-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 flex items-center gap-4 sm:gap-6 md:gap-8">
         {navItems.map((item, index) => (
           <motion.a
             key={item.href}
             href={item.href}
-            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-bold text-base"
+            className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors font-bold text-sm sm:text-base"
             whileHover={{ y: -2 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export default function Nav() {
           </motion.a>
         ))}
         
-        <div className="w-px h-8 bg-gray-300 dark:bg-gray-600 mx-2" />
+        <div className="w-px h-6 sm:h-8 bg-gray-300 dark:bg-gray-600 mx-1 sm:mx-2" />
         
         <motion.button
           onClick={toggleTheme}
@@ -48,9 +48,9 @@ export default function Nav() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           {theme === 'dark' ? (
-            <Sun className="h-5 w-5 text-gray-600 dark:text-gray-300" />
-          ) : (
-            <Moon className="h-5 w-5 text-gray-600 dark:text-gray-300" />
+                      <Sun className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 dark:text-gray-300" />
+        ) : (
+          <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 dark:text-gray-300" />
           )}
         </motion.button>
       </div>
