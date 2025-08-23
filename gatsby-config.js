@@ -8,6 +8,11 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-postcss",
-    "gatsby-plugin-typescript"
-  ]
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-react-helmet"
+  ],
+  // Add favicon links
+  flags: {
+    FAST_DEV: true
+  }
 };

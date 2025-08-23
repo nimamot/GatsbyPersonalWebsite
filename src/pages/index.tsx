@@ -6,6 +6,7 @@ import Nav from "@/components/Nav";
 import Typewriter from "@/components/Typewriter";
 import { SectionHeader, Card, Divider } from "@/components/Section";
 import LoadingScreen from "@/components/LoadingScreen";
+import SEO from "@/components/SEO";
 
 export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
@@ -52,6 +53,7 @@ export default function Home(){
 
   return (
     <>
+      <SEO />
       <LoadingScreen isLoading={isLoading} />
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Nav />
