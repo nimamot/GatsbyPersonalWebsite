@@ -30,11 +30,16 @@ export default function Home(){
       try {
         await Promise.all(
           imageUrls.map(url => {
-            return new Promise((resolve, reject) => {
-              const img = new Image();
-              img.onload = resolve;
-              img.onerror = resolve; // Don't fail if image doesn't load
-              img.src = url;
+            return new Promise((resolve) => {
+              try {
+                const img = new Image();
+                img.onload = () => resolve(null);
+                img.onerror = () => resolve(null); // Don't fail if image doesn't load
+                img.src = url;
+              } catch (error) {
+                console.log('Error creating image:', error);
+                resolve(null);
+              }
             });
           })
         );
@@ -435,11 +440,11 @@ function Experience(){
           >
             <summary className="flex cursor-pointer list-none items-center justify-between p-8">
               <div className="flex items-center gap-6">
-                <div className="w-20 h-20 flex items-center justify-center">
+                <div className="w-24 h-24 flex items-center justify-center">
                   <img 
                     src={it.logo} 
                     alt={`${it.company} logo`} 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain dark:invert"
                   />
                 </div>
                 <div>
@@ -915,15 +920,15 @@ function Fun(){
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Side Quests</h3>
-          <div className="bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-700 rounded-2xl p-6">
+          <div className="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {sideQuests.map((quest, i) => (
                 <motion.div
                   key={quest.id}
                   className={`flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg transition-all cursor-pointer ${
                     selectedActivity === quest.id 
-                      ? 'bg-green-200 dark:bg-green-700/50 shadow-md' 
-                      : 'hover:bg-green-100 dark:hover:bg-green-800/30'
+                      ? 'bg-blue-200 dark:bg-blue-700/50 shadow-md' 
+                      : 'hover:bg-blue-100 dark:hover:bg-blue-800/30'
                   }`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
