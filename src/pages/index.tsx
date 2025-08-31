@@ -7,6 +7,8 @@ import Typewriter from "@/components/Typewriter";
 import { SectionHeader, Card, Divider } from "@/components/Section";
 import LoadingScreen from "@/components/LoadingScreen";
 import SEO from "@/components/SEO";
+import LeetCodeCard from "@/components/LeetCodeCard";
+import LeetCodeStats from "@/components/LeetCodeStats";
 
 export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
@@ -72,6 +74,8 @@ export default function Home(){
           <Projects />
           <Divider />
           <Fun />
+          <Divider />
+          <LeetCodeSection />
           <Divider />
           <Contact />
           <Footer />
@@ -403,6 +407,17 @@ function About(){
             If anything catches your eye or you just want to connect, my socials are above and in the footer. Always up for a coffee chat or Formula 1 discussion! :')
           </p>
         </motion.div>
+      </div>
+      
+    </section>
+  );
+}
+
+function LeetCodeSection() {
+  return (
+    <section className="py-20">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+        <LeetCodeStats username="nimamot" />
       </div>
     </section>
   );
@@ -851,7 +866,7 @@ function Fun(){
       title: "Muay Thai 🥋",
       subtitle: "The art of eight limbs",
       description: "I get punched (and punch back) for fun! Muay Thai is my way to blow off steam, learn cool moves, and occasionally discover new bruises. It’s sweaty, tough, and honestly, a blast.",
-      image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1200&auto=format&fit=crop",
+      image: "https://i.pinimg.com/736x/32/5e/32/325e3232df8554cb14020ef6deaa1630.jpg",
       link: "#",
       linkText: "Training Journey"
     },
