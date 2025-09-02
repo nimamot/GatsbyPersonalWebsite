@@ -453,39 +453,41 @@ function Experience(){
             viewport={{ once: true }}
             transition={{ delay: idx * 0.1, duration: 0.6 }}
           >
-            <summary className="flex cursor-pointer list-none items-center justify-between p-8">
-              <div className="flex items-center gap-6">
-                <div className="w-24 h-24 flex items-center justify-center">
+            <summary className="flex cursor-pointer list-none items-start justify-between p-4 sm:p-8">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 flex-1 min-w-0">
+                <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center">
                   <img 
                     src={it.logo} 
                     alt={`${it.company} logo`} 
                     className="w-full h-full object-contain dark:invert"
                   />
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900 dark:text-white">{it.role} @ {it.company}</div>
-                  <div className="flex items-center gap-2 mt-2">
-                    <div className="w-4 h-4 text-red-500">📍</div>
-                    <div className="text-lg text-gray-600 dark:text-gray-400">{it.location}</div>
-                    <div className="text-lg text-gray-500 dark:text-gray-500">•</div>
-                    <div className="text-lg text-gray-600 dark:text-gray-400">{it.when}</div>
+                <div className="flex-1 min-w-0">
+                  <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{it.role} @ {it.company}</div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 text-red-500">📍</div>
+                      <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.location}</div>
+                    </div>
+                    <div className="hidden sm:block text-lg text-gray-500 dark:text-gray-500">•</div>
+                    <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.when}</div>
                   </div>
                 </div>
               </div>
               <motion.span 
-                className="text-gray-400 dark:text-gray-500 group-open:rotate-180 transition-transform duration-300 text-2xl"
+                className="text-gray-400 dark:text-gray-500 group-open:rotate-180 transition-transform duration-300 text-xl sm:text-2xl flex-shrink-0 ml-4"
                 whileHover={{ scale: 1.2 }}
                 style={{ display: 'flex', alignItems: 'center' }}
               >
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="16" cy="16" r="16" fill="white"/>
-                  <path d="M10 14L16 20L22 14" stroke="#19191C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-8 sm:h-8">
+                  <circle cx="14" cy="14" r="14" fill="white"/>
+                  <path d="M8.75 12.25L14 17.5L19.25 12.25" stroke="#19191C" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </motion.span>
             </summary>
             
-            <div className="px-8 pb-8 ml-20 space-y-4">
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300 text-lg">
+            <div className="px-4 sm:px-8 pb-8 sm:ml-20 space-y-4">
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300 text-base sm:text-lg">
                 {it.bullets.map((b, i) => (
                   <motion.li 
                     key={i}
