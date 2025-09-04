@@ -9,7 +9,7 @@ interface LeetCodeCardProps {
 }
 
 export default function LeetCodeCard({ 
-  username = "nimamot", 
+  username = "shariqh", 
   className = "",
   theme = "dark",
   hide = ""

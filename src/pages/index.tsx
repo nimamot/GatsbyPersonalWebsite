@@ -9,6 +9,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import SEO from "@/components/SEO";
 import LeetCodeCard from "@/components/LeetCodeCard";
 import LeetCodeStats from "@/components/LeetCodeStats";
+import LeetCodeHeatmap from "@/components/LeetCodeHeatmap";
 
 export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
@@ -416,8 +417,9 @@ function About(){
 function LeetCodeSection() {
   return (
     <section className="py-20">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 space-y-8">
         <LeetCodeStats username="nimamot" />
+        <LeetCodeHeatmap username="nimamot" />
       </div>
     </section>
   );
