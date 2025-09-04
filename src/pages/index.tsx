@@ -529,9 +529,19 @@ function Projects(){
   // Separate projects into two categories
   const softwareEngineering = [
     {
+      title: "Leetrack - A Modern Alternative to Spreadsheet-Based Problem Tracking",
+      subtitle: "Full-stack coding practice analytics platform",
+      desc: "Leetrack solves the common problem of students and job seekers relying on spreadsheets to track their coding practice, while enabling them to share their progress and achievements with others. This full-stack application transforms how interview candidates monitor their progress, showcase their coding journey, and maintain consistency in their coding preparation.\n\nKey Features & Tech Stack:\n• Modern React Frontend - Built with TypeScript, Vite, and Tailwind CSS for a responsive, intuitive user interface that works seamlessly across all devices\n• Real-time Analytics Dashboard - Interactive charts, GitHub-style activity heatmaps, and streak tracking powered by Recharts and custom data visualization components with 365 days of activity tracking\n• Public API & Embeddable Widgets - RESTful API endpoints with CORS support, rate limiting, and JSON responses under 200ms that allow users to embed their coding activity on personal websites, portfolios, or social media profiles\n• Secure Backend Infrastructure - Supabase-powered PostgreSQL database with Row Level Security (RLS), real-time subscriptions, and automatic user authentication handling with zero-downtime deployments\n• Privacy-First Design - Granular privacy controls allowing users to make profiles public/private and control what data is shared through the public API, with opt-in only data exposure and 5-minute refresh intervals",
+      tech: "React • TypeScript • Vite • Tailwind CSS • Supabase • PostgreSQL • Recharts • RESTful API • CORS • Rate Limiting",
+      link: "https://leetrack.vercel.app/",
+      github: "https://github.com/nimamot/leetrack",
+      color: "from-indigo-50 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=200&q=80" // Coding dashboard/analytics
+    },
+    {
       title: "Quantitative Trading Analysis Platform",
       subtitle: "Web-based financial analysis & backtesting",
-      desc: "Comprehensive quantitative trading analysis platform built with Streamlit providing real-time financial data analysis, technical indicators, backtesting capabilities, and sentiment analysis. Features include moving average crossover strategies, RSI mean reversion, volatility analysis, and multi-source sentiment analysis from Reddit and Google News using VADER sentiment analysis.",
+      desc: "Comprehensive quantitative trading analysis platform built with Streamlit providing real-time financial data analysis, technical indicators, backtesting capabilities, and sentiment analysis.\n\nKey Features & Tech Stack:\n• Real-time Financial Data Analysis - Live market data processing with Yahoo Finance API integration for accurate trading insights\n• Technical Indicators & Backtesting - Moving average crossover strategies, RSI mean reversion, and volatility analysis with historical performance testing\n• Multi-source Sentiment Analysis - VADER sentiment analysis from Reddit and Google News to gauge market sentiment\n• Interactive Visualization - Plotly-powered charts and graphs for comprehensive data visualization and analysis\n• Streamlit Web Interface - User-friendly web application for easy access to trading tools and analytics",
       tech: "Python • Streamlit • Pandas • NumPy • Plotly • Yahoo Finance API • VADER Sentiment",
       link: "https://quantalgo.streamlit.app",
       github: "https://github.com/shariqimran/Quant",
@@ -541,7 +551,7 @@ function Projects(){
     {
       title: "TripExpense - Modern Trip Expense Tracker",
       subtitle: "Full-stack expense splitting application",
-      desc: "Full-stack web application that revolutionizes how friends split and track expenses during trips. Features smart expense tracking with automatic equal splitting, real-time balance calculation, group management with shareable links, comprehensive dashboard, CSV export, and AI-powered settlement suggestions. Built with modern technologies for seamless, secure, and intuitive group finance management.",
+      desc: "Full-stack web application that revolutionizes how friends split and track expenses during trips with smart expense tracking and automatic equal splitting.\n\nKey Features & Tech Stack:\n• Smart Expense Tracking - Automatic equal splitting with real-time balance calculation and comprehensive expense categorization\n• Group Management - Shareable links for easy group creation and member management with secure access controls\n• Comprehensive Dashboard - Real-time expense overview with visual charts and detailed transaction history\n• Data Export & Analytics - CSV export functionality and AI-powered settlement suggestions for optimal payment distribution\n• Modern Tech Stack - Next.js 14 with TypeScript, Tailwind CSS, Supabase backend, and Framer Motion animations for seamless user experience",
       tech: "Next.js 14 • TypeScript • Tailwind CSS • Supabase • PostgreSQL • Vercel • Framer Motion",
       link: "#",
       github: "https://github.com/nimamot/TripExpense",
@@ -551,7 +561,7 @@ function Projects(){
     {
       title: "peerAdvice (nwHacks Hackathon)",
       subtitle: "Peer-to-peer advising platform",
-      desc: "Designed and developed a peer-to-peer advising platform utilizing Python, Flask, and PostgreSQL with user authentication implemented through Google OAuth and Firebase and appointment scheduling via Calendly API. Incorporated front-end technologies such as HTML, CSS, and JavaScript to create an intuitive interface and smooth user experience. Applied Agile methodologies for efficient project management and collaboration resulting in a functional and user-friendly solution.",
+      desc: "Designed and developed a peer-to-peer advising platform that connects students with mentors for personalized guidance and support.\n\nKey Features & Tech Stack:\n• User Authentication - Google OAuth and Firebase integration for secure user registration and login\n• Appointment Scheduling - Calendly API integration for seamless mentor-student meeting coordination\n• Database Management - PostgreSQL backend for storing user profiles, appointments, and conversation history\n• Frontend Interface - HTML, CSS, and JavaScript for intuitive user experience and responsive design\n• Agile Development - Applied Agile methodologies for efficient project management and collaborative development",
       tech: "Python • Flask • PostgreSQL • Google OAuth • Firebase • Calendly API • HTML • CSS • JavaScript",
       link: "https://github.com/nimamot/peer_Advice",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
@@ -560,7 +570,7 @@ function Projects(){
     {
       title: "mAssenger (Featured by Brain Station)",
       subtitle: "iOS chat & media app",
-      desc: "Constructed a messenger app for iOS. The program allowed the user to create an account with their email address, login to their account, search for other users, and share texts, pictures, videos, and locations. User authentication is handled through FireBase cloud services. Users data (username, email, previous conversations) is also stored on FireBase so that the users can see their data when they log back in to their account. The app was developed with Swift and Ruby.",
+      desc: "Constructed a comprehensive messenger app for iOS that enables users to create accounts, connect with others, and share multimedia content seamlessly.\n\nKey Features & Tech Stack:\n• User Authentication - Email-based account creation and login with secure Firebase cloud services integration\n• User Discovery - Search functionality to find and connect with other users on the platform\n• Multimedia Sharing - Support for texts, pictures, videos, and location sharing in conversations\n• Cloud Data Storage - Firebase backend for storing user data, conversations, and media with automatic synchronization\n• iOS Development - Native Swift and Ruby implementation for optimal performance and user experience",
       tech: "Swift • Ruby • Firebase • iOS",
       link: "https://github.com/nimamot/Massenger", 
       color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20",
@@ -569,7 +579,7 @@ function Projects(){
     {
       title: "La Letra",
       subtitle: "Spanish learning with music",
-      desc: "Interactive Spanish learning platform with song-based vocabulary and grammar practice.",
+      desc: "Interactive Spanish learning platform that combines music and language education for engaging vocabulary and grammar practice.\n\nKey Features & Tech Stack:\n• Song-based Learning - Interactive platform using music to teach Spanish vocabulary and grammar in an engaging way\n• Web Application - Django-powered backend with HTML and CSS frontend for responsive user experience\n• Cloud Deployment - PythonAnywhere hosting for reliable and accessible online learning platform\n• Educational Content - Structured lessons and practice exercises integrated with musical content\n• User-friendly Interface - Intuitive design for seamless learning experience across different devices",
       tech: "Django • HTML • CSS • PythonAnywhere",
       link: "https://nimamot.github.io/Spanish/",
       color: "from-orange-50 to-red-100 dark:from-orange-900/20 dark:to-red-900/20",
@@ -581,7 +591,7 @@ function Projects(){
     {
       title: "Automated Financial Analysis Pipeline",
       subtitle: "Cloud-based financial analytics",
-      desc: "Designed and implemented a scalable data pipeline using AWS Lambda, S3, and DynamoDB to automate financial statement analysis. Processed user-uploaded financial statements in CSV format, conducted comprehensive analyses, and generated detailed PDF reports. Developed advanced data analysis features, including flagged transaction detection, spending trend visualization, and recurring transaction analysis, leveraging Python for data processing and visualization. Integrated cloud-based solutions for seamless data ingestion, analysis, and storage, highlighting the intersection of cloud computing and data science.",
+      desc: "Designed and implemented a scalable data pipeline using AWS Lambda, S3, and DynamoDB to automate financial statement analysis and generate comprehensive reports.\n\nKey Features & Tech Stack:\n• Cloud Infrastructure - AWS Lambda, S3, and DynamoDB for scalable data processing and storage\n• Financial Data Processing - Automated analysis of user-uploaded CSV financial statements with comprehensive reporting\n• Advanced Analytics - Flagged transaction detection, spending trend visualization, and recurring transaction analysis\n• PDF Report Generation - Automated creation of detailed financial analysis reports for end users\n• Python Data Science - Leveraged Python for data processing, visualization, and machine learning insights",
       tech: "AWS Lambda • S3 • DynamoDB • Python • Data Science • Cloud Computing",
       link: "https://github.com/nimamot/AWS-Financial-Data-Pipeline",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
@@ -590,7 +600,7 @@ function Projects(){
     {
       title: "Bitcoin Price Prediction",
       subtitle: "Crypto price forecasting",
-      desc: "Built a series of models, including Linear Regression, KNN, Random Forest, XGBoost, CatBoost, and LSTM, to forecast Bitcoin prices. Employed feature engineering techniques and hyperparameter optimization to enhance model accuracy and capture temporal dependencies. Developed preprocessing pipelines and utilized advanced regression analysis to uncover meaningful patterns in time-series data.",
+      desc: "Built a comprehensive machine learning pipeline using multiple algorithms to forecast Bitcoin prices with advanced feature engineering and optimization techniques.\n\nKey Features & Tech Stack:\n• Multiple ML Models - Linear Regression, KNN, Random Forest, XGBoost, CatBoost, and LSTM for comprehensive price prediction\n• Feature Engineering - Advanced techniques to extract meaningful patterns from time-series cryptocurrency data\n• Hyperparameter Optimization - Systematic tuning to enhance model accuracy and capture temporal dependencies\n• Preprocessing Pipelines - Automated data cleaning and transformation for optimal model performance\n• Time Series Analysis - Advanced regression analysis to uncover meaningful patterns in cryptocurrency market data",
       tech: "Python • Machine Learning • XGBoost • CatBoost • LSTM • Time Series • Feature Engineering",
       link: "https://github.com/nimamot/Price_prediction",
       color: "from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20",
@@ -599,7 +609,7 @@ function Projects(){
     {
       title: "Sports Hub",
       subtitle: "Sports data management",
-      desc: "Implemented a relational database for sports management using Oracle DB and SQL, focusing on comprehensive data organization. Enhanced user experience by incorporating advanced SQL operations, facilitating powerful data manipulation and insights. Designed a user-friendly web interface for efficient database interaction, featuring error handling and input validation.",
+      desc: "Implemented a comprehensive relational database system for sports management using Oracle DB and SQL with advanced data organization and user-friendly web interface.\n\nKey Features & Tech Stack:\n• Relational Database Design - Oracle DB implementation with comprehensive data organization for sports management\n• Advanced SQL Operations - Complex queries and data manipulation for powerful insights and analytics\n• Web Interface - User-friendly web application for efficient database interaction and data visualization\n• Error Handling & Validation - Robust input validation and error handling for reliable user experience\n• Data Management - Comprehensive sports data organization with efficient storage and retrieval systems",
       tech: "Oracle DB • SQL • Data Visualization • Web Interface • Data Management",
       link: "#",
       github: "https://github.com/nimamot/SportsStats",
@@ -655,7 +665,7 @@ function Projects(){
         {open && (
           <div className="px-4 sm:px-6 md:px-8 pb-6 sm:pb-8">
             {project.desc && (
-              <div className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4">{project.desc}</div>
+              <div className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 whitespace-pre-line">{project.desc}</div>
             )}
             {project.tech && (
               <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0">
