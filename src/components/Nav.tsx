@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
+import ClientOnly from "./ClientOnly";
 
 export default function Nav() {
   const { theme, toggleTheme } = useTheme();
@@ -38,21 +39,25 @@ export default function Nav() {
         
         <div className="w-px h-6 sm:h-8 bg-gray-300 dark:bg-gray-600 mx-1 sm:mx-2" />
         
-        <motion.button
-          onClick={toggleTheme}
-          className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          initial={{ opacity: 0, rotate: -180 }}
-          animate={{ opacity: 1, rotate: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          {theme === 'dark' ? (
-                      <Sun className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 dark:text-gray-300" />
-        ) : (
-          <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 dark:text-gray-300" />
-          )}
-        </motion.button>
+        <ClientOnly fallback={
+          <div className="p-2 rounded-full w-8 h-8 sm:w-10 sm:h-10" />
+        }>
+          <motion.button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, rotate: -180 }}
+            animate={{ opacity: 1, rotate: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+          >
+            {theme === 'dark' ? (
+                        <Sun className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 dark:text-gray-300" />
+          ) : (
+            <Moon className="h-4 w-4 sm:h-5 sm:w-5 text-gray-600 dark:text-gray-300" />
+            )}
+          </motion.button>
+        </ClientOnly>
       </div>
     </motion.nav>
   );

@@ -13,6 +13,7 @@ import LeetCodeHeatmap from "@/components/LeetCodeHeatmap";
 import ProblemsSolvedList from "@/components/ProblemsSolvedList";
 import GitHubHeatmap from "@/components/GitHubHeatmap";
 import CogsHoverCard from "@/components/CogsHoverCard";
+import ClientOnly from "@/components/ClientOnly";
 
 export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
@@ -180,10 +181,16 @@ function Hero(){
           >
             Nima Motieifard
           </motion.h1>
-          <Typewriter 
-            className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium" 
-            phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover", "I like building useful things"]} 
-          />
+          <ClientOnly fallback={
+            <div className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium">
+              Software Engineer
+            </div>
+          }>
+            <Typewriter 
+              className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium" 
+              phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover", "I like building useful things"]} 
+            />
+          </ClientOnly>
         </div>
         
         {/* Character Section */}
@@ -423,15 +430,42 @@ function LeetCodeSection() {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 space-y-8">
-        <LeetCodeStats username="nimamot" />
+        <ClientOnly fallback={
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+              <div className="text-4xl mb-2">🧠</div>
+              <p>Loading LeetCode stats...</p>
+            </div>
+          </div>
+        }>
+          <LeetCodeStats username="nimamot" />
+        </ClientOnly>
         
         {/* Heatmap and Problems List Side by Side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <LeetCodeHeatmap 
-            username="nimamot" 
-            onSolvedProblemsChange={setSolvedProblems}
-          />
-          <ProblemsSolvedList problems={solvedProblems} />
+          <ClientOnly fallback={
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+              <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                <div className="text-4xl mb-2">📊</div>
+                <p>Loading activity heatmap...</p>
+              </div>
+            </div>
+          }>
+            <LeetCodeHeatmap 
+              username="nimamot" 
+              onSolvedProblemsChange={setSolvedProblems}
+            />
+          </ClientOnly>
+          <ClientOnly fallback={
+            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+              <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+                <div className="text-4xl mb-2">✓</div>
+                <p>Loading solved problems...</p>
+              </div>
+            </div>
+          }>
+            <ProblemsSolvedList problems={solvedProblems} />
+          </ClientOnly>
         </div>
       </div>
     </section>
@@ -833,7 +867,16 @@ function Projects(){
 
       {/* GitHub Activity Section */}
       <div className="mx-auto mt-16 max-w-4xl">
-        <GitHubHeatmap username="nimamot" />
+        <ClientOnly fallback={
+          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
+            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+              <div className="text-4xl mb-2">📊</div>
+              <p>Loading GitHub activity...</p>
+            </div>
+          </div>
+        }>
+          <GitHubHeatmap username="nimamot" />
+        </ClientOnly>
       </div>
     </section>
   );

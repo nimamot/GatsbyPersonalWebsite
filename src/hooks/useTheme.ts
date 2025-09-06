@@ -11,8 +11,10 @@ interface UseThemeReturn {
 
 export function useTheme(): UseThemeReturn {
   const [theme, setTheme] = useState<Theme>("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const saved = (localStorage.getItem("theme") as Theme | null);
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const initial = saved ?? (prefersDark ? "dark" : "light");
