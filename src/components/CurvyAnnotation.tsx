@@ -1,28 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useSpring, animated } from '@react-spring/web';
 
 interface CurvyAnnotationProps {
   className?: string;
 }
 
 export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps) {
-  // Spring animation for the path drawing
-  const pathSpring = useSpring({
-    from: { pathLength: 0 },
-    to: { pathLength: 1 },
-    config: { duration: 2000 },
-    delay: 1200,
-  });
-
-  // Spring animation for the dash offset
-  const dashSpring = useSpring({
-    from: { strokeDashoffset: 0 },
-    to: { strokeDashoffset: -20 },
-    loop: { reverse: true },
-    config: { duration: 2000 },
-  });
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,36 +13,30 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
       transition={{ duration: 0.8, delay: 1 }}
       className={`absolute -right-40 bottom-8 z-20 pointer-events-none ${className}`}
     >
-      {/* Curvy Line SVG with proper animations */}
+      {/* Simple visible line first */}
+      <div className="absolute top-1/2 left-0 w-32 h-0.5 bg-blue-500 transform -translate-y-1/2"></div>
+      
+      {/* Curvy Line SVG with framer-motion animations */}
       <svg
         width="200"
         height="100"
         viewBox="0 0 200 100"
         className="absolute"
       >
-        {/* Main curvy path */}
-        <animated.path
+        {/* Simple curvy path that should definitely show */}
+        <path
           d="M180 50 Q140 20 80 50 T20 50"
           stroke="#3B82F6"
-          strokeWidth="3"
+          strokeWidth="4"
           fill="none"
           strokeLinecap="round"
-          strokeDasharray="8,4"
-          strokeDashoffset={dashSpring.strokeDashoffset}
-          pathLength={pathSpring.pathLength}
-          style={{
-            strokeDasharray: "8,4",
-            strokeDashoffset: dashSpring.strokeDashoffset,
-          }}
+          strokeDasharray="10,5"
         />
         
         {/* Arrow head pointing to the list */}
-        <motion.path
+        <path
           d="M15 50 L25 45 L25 55 Z"
           fill="#3B82F6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 2.5 }}
         />
       </svg>
 
