@@ -763,11 +763,6 @@ function Projects(){
           </div>
         ))}
       </div>
-      {/* GitHub Activity Section */}
-      <div className="mx-auto mt-16 max-w-4xl">
-        <GitHubHeatmap username="nimamot" />
-      </div>
-
       {/* More Projects & Notes section remains unchanged */}
       <div className="mx-auto mt-16 max-w-4xl">
         <h3 className="mb-8 text-center text-3xl font-bold text-gray-900 dark:text-white">More Projects</h3>
@@ -822,6 +817,11 @@ function Projects(){
             </motion.details>
           ))}
         </div>
+      </div>
+
+      {/* GitHub Activity Section */}
+      <div className="mx-auto mt-16 max-w-4xl">
+        <GitHubHeatmap username="nimamot" />
       </div>
     </section>
   );
