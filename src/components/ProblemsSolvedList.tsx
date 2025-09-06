@@ -48,25 +48,25 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
   if (problems.length === 0) {
     return (
       <div className="relative">
-        {/* Curvy Annotation Overlay */}
+        {/* Curvy Annotation Overlay - positioned at bottom */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="absolute -right-32 top-8 z-20 pointer-events-none"
+          className="absolute -right-40 bottom-8 z-20 pointer-events-none"
         >
-          {/* Curvy Line SVG */}
+          {/* Curvy Line SVG - pointing to bottom of component */}
           <motion.svg
-            width="200"
-            height="120"
-            viewBox="0 0 200 120"
+            width="180"
+            height="80"
+            viewBox="0 0 180 80"
             className="absolute"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
           >
             <motion.path
-              d="M20 60 Q60 20 100 60 T180 60"
+              d="M160 40 Q120 10 60 40 T20 40"
               stroke="#3B82F6"
               strokeWidth="2"
               fill="none"
@@ -82,9 +82,9 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
                 ease: "easeInOut"
               }}
             />
-            {/* Arrow head pointing to the list */}
+            {/* Arrow head pointing to the bottom */}
             <motion.path
-              d="M15 60 L25 55 L25 65 Z"
+              d="M25 40 L15 35 L15 45 Z"
               fill="#3B82F6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -94,10 +94,10 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
 
           {/* Annotation Bubble */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 20 }}
+            initial={{ opacity: 0, scale: 0.8, x: -20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 1.8 }}
-            className="absolute top-0 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
+            className="absolute top-0 left-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
           >
             <div className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
               My own tool! 🚀
@@ -252,25 +252,25 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
 
   return (
     <div className="relative">
-      {/* Curvy Annotation Overlay */}
+      {/* Curvy Annotation Overlay - positioned at bottom of list */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1 }}
-        className="absolute -right-32 top-8 z-20 pointer-events-none"
+        className="absolute -right-40 bottom-8 z-20 pointer-events-none"
       >
-        {/* Curvy Line SVG */}
+        {/* Curvy Line SVG - pointing to bottom of problems list */}
         <motion.svg
-          width="200"
-          height="120"
-          viewBox="0 0 200 120"
+          width="180"
+          height="80"
+          viewBox="0 0 180 80"
           className="absolute"
           initial={{ pathLength: 0 }}
           animate={{ pathLength: 1 }}
           transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
         >
           <motion.path
-            d="M20 60 Q60 20 100 60 T180 60"
+            d="M160 40 Q120 10 60 40 T20 40"
             stroke="#3B82F6"
             strokeWidth="2"
             fill="none"
@@ -286,9 +286,9 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
               ease: "easeInOut"
             }}
           />
-          {/* Arrow head pointing to the list */}
+          {/* Arrow head pointing to the bottom of the list */}
           <motion.path
-            d="M15 60 L25 55 L25 65 Z"
+            d="M25 40 L15 35 L15 45 Z"
             fill="#3B82F6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -298,10 +298,10 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
 
         {/* Annotation Bubble */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, x: 20 }}
+          initial={{ opacity: 0, scale: 0.8, x: -20 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 1.8 }}
-          className="absolute top-0 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
+          className="absolute top-0 left-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
         >
           <div className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
             My own tool! 🚀
