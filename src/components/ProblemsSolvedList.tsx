@@ -67,6 +67,31 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
           <p>No problems solved yet</p>
           <p className="text-sm mt-1">Start your coding journey!</p>
         </div>
+
+        {/* Built with Leetrack Badge */}
+        <div className="mt-4 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-xs font-medium text-orange-700 dark:text-orange-300">
+            <span>Built with</span>
+            <a 
+              href="#projects" 
+              onClick={(e) => {
+                e.preventDefault();
+                // Scroll to projects section and highlight Leetrack
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  // Add a small delay to ensure smooth scrolling
+                  setTimeout(() => {
+                    // You could add highlighting logic here if needed
+                  }, 500);
+                }
+              }}
+              className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+            >
+              Leetrack
+            </a>
+          </div>
+        </div>
       </motion.div>
     );
   }
@@ -146,6 +171,31 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
+      </div>
+
+      {/* Built with Leetrack Badge */}
+      <div className="mt-4 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-xs font-medium text-orange-700 dark:text-orange-300">
+          <span>Built with</span>
+          <a 
+            href="#projects" 
+            onClick={(e) => {
+              e.preventDefault();
+              // Scroll to projects section and highlight Leetrack
+              const projectsSection = document.getElementById('projects');
+              if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth' });
+                // Add a small delay to ensure smooth scrolling
+                setTimeout(() => {
+                  // You could add highlighting logic here if needed
+                }, 500);
+              }
+            }}
+            className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+          >
+            Leetrack
+          </a>
+        </div>
       </div>
     </motion.div>
   );
