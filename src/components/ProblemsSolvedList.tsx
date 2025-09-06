@@ -47,12 +47,96 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
 
   if (problems.length === 0) {
     return (
-      <motion.div
-        className={`bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm ${className}`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="relative">
+        {/* Curvy Annotation Overlay */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="absolute -right-32 top-8 z-20 pointer-events-none"
+        >
+          {/* Curvy Line SVG */}
+          <motion.svg
+            width="200"
+            height="120"
+            viewBox="0 0 200 120"
+            className="absolute"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+          >
+            <motion.path
+              d="M20 60 Q60 20 100 60 T180 60"
+              stroke="#3B82F6"
+              strokeWidth="2"
+              fill="none"
+              strokeLinecap="round"
+              strokeDasharray="5,5"
+              animate={{ 
+                strokeDashoffset: [0, -10],
+                opacity: [0.6, 1, 0.6]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            {/* Arrow head pointing to the list */}
+            <motion.path
+              d="M15 60 L25 55 L25 65 Z"
+              fill="#3B82F6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 2.5 }}
+            />
+          </motion.svg>
+
+          {/* Annotation Bubble */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 1.8 }}
+            className="absolute top-0 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
+          >
+            <div className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+              My own tool! 🚀
+            </div>
+            <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+              This data comes from Leetrack - a coding practice tracker I built
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-orange-600 dark:text-orange-400 font-medium">Built with</span>
+              <a 
+                href="#projects" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const projectsSection = document.getElementById('projects');
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-xs font-semibold text-orange-700 dark:text-orange-300 hover:text-orange-800 dark:hover:text-orange-200 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+              >
+                Leetrack
+              </a>
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 2 }}
+                className="text-orange-500"
+              >
+                ✨
+              </motion.span>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className={`bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm ${className}`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">✓</span>
@@ -161,17 +245,102 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
             </motion.div>
           </div>
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
     );
   }
 
   return (
-    <motion.div
-      className={`bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
+    <div className="relative">
+      {/* Curvy Annotation Overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="absolute -right-32 top-8 z-20 pointer-events-none"
+      >
+        {/* Curvy Line SVG */}
+        <motion.svg
+          width="200"
+          height="120"
+          viewBox="0 0 200 120"
+          className="absolute"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+        >
+          <motion.path
+            d="M20 60 Q60 20 100 60 T180 60"
+            stroke="#3B82F6"
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray="5,5"
+            animate={{ 
+              strokeDashoffset: [0, -10],
+              opacity: [0.6, 1, 0.6]
+            }}
+            transition={{ 
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          {/* Arrow head pointing to the list */}
+          <motion.path
+            d="M15 60 L25 55 L25 65 Z"
+            fill="#3B82F6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 2.5 }}
+          />
+        </motion.svg>
+
+        {/* Annotation Bubble */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: 20 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 1.8 }}
+          className="absolute top-0 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
+        >
+          <div className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
+            My own tool! 🚀
+          </div>
+          <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">
+            This data comes from Leetrack - a coding practice tracker I built
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-orange-600 dark:text-orange-400 font-medium">Built with</span>
+            <a 
+              href="#projects" 
+              onClick={(e) => {
+                e.preventDefault();
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-xs font-semibold text-orange-700 dark:text-orange-300 hover:text-orange-800 dark:hover:text-orange-200 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+            >
+              Leetrack
+            </a>
+            <motion.span
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 2 }}
+              className="text-orange-500"
+            >
+              ✨
+            </motion.span>
+          </div>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className={`bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm ${className}`}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <div className="flex items-center gap-3 mb-6">
           <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-sm">✓</span>
@@ -242,99 +411,43 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
         </a>
       </div>
 
-      {/* Built with Leetrack Badge with Modern Annotation */}
-      <div className="mt-6 relative">
-        {/* Modern Annotation Pointer */}
-        <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="relative"
+      {/* Built with Leetrack Badge */}
+      <div className="mt-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-sm font-medium text-orange-700 dark:text-orange-300 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+        >
+          <span>Built with</span>
+          <a 
+            href="#projects" 
+            onClick={(e) => {
+              e.preventDefault();
+              // Scroll to projects section and highlight Leetrack
+              const projectsSection = document.getElementById('projects');
+              if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth' });
+                // Add a small delay to ensure smooth scrolling
+                setTimeout(() => {
+                  // You could add highlighting logic here if needed
+                }, 500);
+              }
+            }}
+            className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2 hover:underline-offset-4"
           >
-            {/* Animated Arrow */}
-            <motion.div
-              animate={{ 
-                x: [0, 8, 0],
-                opacity: [0.7, 1, 0.7]
-              }}
-              transition={{ 
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="flex items-center"
-            >
-              <svg 
-                width="60" 
-                height="20" 
-                viewBox="0 0 60 20" 
-                className="text-blue-500"
-                fill="none"
-              >
-                <path
-                  d="M5 10 L50 10 M45 5 L50 10 L45 15"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </motion.div>
-            
-            {/* Floating Annotation Text */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -top-12 -right-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 shadow-lg"
-            >
-              <div className="text-xs font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
-                My own tool! 🚀
-              </div>
-              {/* Small triangle pointer */}
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-200 dark:border-t-gray-600"></div>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Enhanced Badge */}
-        <div className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-sm font-medium text-orange-700 dark:text-orange-300 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+            Leetrack
+          </a>
+          <motion.span
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+            className="text-orange-600 dark:text-orange-400"
           >
-            <span>Built with</span>
-            <a 
-              href="#projects" 
-              onClick={(e) => {
-                e.preventDefault();
-                // Scroll to projects section and highlight Leetrack
-                const projectsSection = document.getElementById('projects');
-                if (projectsSection) {
-                  projectsSection.scrollIntoView({ behavior: 'smooth' });
-                  // Add a small delay to ensure smooth scrolling
-                  setTimeout(() => {
-                    // You could add highlighting logic here if needed
-                  }, 500);
-                }
-              }}
-              className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2 hover:underline-offset-4"
-            >
-              Leetrack
-            </a>
-            <motion.span
-              animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-              className="text-orange-600 dark:text-orange-400"
-            >
-              ✨
-            </motion.span>
-          </motion.div>
-        </div>
+            ✨
+          </motion.span>
+        </motion.div>
       </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
