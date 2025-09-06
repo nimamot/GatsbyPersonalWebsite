@@ -11,7 +11,7 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 1 }}
-      className={`absolute -right-56 top-1/2 transform -translate-y-1/2 z-20 ${className}`}
+      className={`absolute -right-56 top-1/2 transform -translate-y-1/2 z-20 hidden lg:block ${className}`}
     >
       {/* Floating annotation with creative design */}
       <motion.div
