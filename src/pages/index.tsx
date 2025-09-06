@@ -12,6 +12,7 @@ import LeetCodeStats from "@/components/LeetCodeStats";
 import LeetCodeHeatmap from "@/components/LeetCodeHeatmap";
 import ProblemsSolvedList from "@/components/ProblemsSolvedList";
 import GitHubHeatmap from "@/components/GitHubHeatmap";
+import CogsHoverCard from "@/components/CogsHoverCard";
 
 export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
@@ -401,7 +402,7 @@ function About(){
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Hi there!</h3>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            Hey! I'm Nima, and thanks for stopping by! I'm currently in my 5th year at UBC, majoring in Cognitive Systems and minoring in Data Science. When I'm not buried in coursework, you'll probably find me hitting the gym, snapping some photos, or enjoying a good cup of coffee.
+            Hey! I'm Nima, and thanks for stopping by! I'm currently in my 5th year at UBC, majoring in <CogsHoverCard><span className="text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 cursor-help underline decoration-blue-300 dark:decoration-blue-600 underline-offset-2 hover:underline-offset-4">Cognitive Systems</span></CogsHoverCard> and minoring in Data Science. When I'm not buried in coursework, you'll probably find me hitting the gym, snapping some photos, or enjoying a good cup of coffee.
           </p>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             This site is my little corner of the internet where I share projects, thoughts, and whatever else comes to mind. Feel free to explore around!
