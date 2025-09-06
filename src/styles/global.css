@@ -104,3 +104,19 @@
   background-color: #1e3a8a;
   color: #dbeafe;
 }
+
+/* Gentle wiggle animation for interactive text */
+@keyframes gentle-wiggle {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(1px) translateY(-0.5px);
+  }
+  50% {
+    transform: translateX(0px) translateY(-1px);
+  }
+  75% {
+    transform: translateX(-1px) translateY(-0.5px);
+  }
+}
