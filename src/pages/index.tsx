@@ -944,10 +944,10 @@ function Fun(){
     finance: {
       title: "Personal Finance 💰",
       subtitle: "Building wealth & security",
-      description: "Budgeting, investing, and trying not to blow my paycheck on coffee. I geek out over spreadsheets and love the feeling of finding a good deal. Adulting, but make it fun!",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
-      link: "#",
-      linkText: "Finance Blog"
+      description: "Budgeting, investing, and trying not to blow my paycheck on coffee. I geek out over spreadsheets and love the feeling of finding a good deal. Adulting, but make it fun! Above is my current asset allocation - it's not much, but it's honest work! 😅 Follow my investment journey on Blossm to see if I actually know what I'm doing or if I'm just really good at pretending.",
+      image: "/static/bloosm.png",
+      link: "https://link.blossomsocial.com/7uYa/dj5z7gwa",
+      linkText: "Follow My Investment Journey"
     },
     markets: {
       title: "Financial Markets 📈",
