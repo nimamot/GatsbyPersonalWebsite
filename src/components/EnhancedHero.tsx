@@ -92,7 +92,7 @@ export default function EnhancedHero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-6xl sm:text-7xl md:text-8xl font-bold text-gray-900 dark:text-white mb-6"
         >
-          Howdy! I'm
+          Hey! I'm
         </motion.h1>
 
         {/* Name with gradient text */}

@@ -171,7 +171,7 @@ function Hero(){
             transition={{ duration: 0.6 }} 
             className="text-2xl text-gray-500 dark:text-gray-400 mb-2"
           >
-            Howdy! I'm
+            Hey! I'm
           </motion.p>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} 
