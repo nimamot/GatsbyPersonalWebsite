@@ -8,56 +8,133 @@ interface CurvyAnnotationProps {
 export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps) {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 1 }}
-      className={`absolute -right-48 bottom-4 z-20 pointer-events-none ${className}`}
+      className={`absolute -right-52 bottom-2 z-20 ${className}`}
     >
-      {/* Simple connecting line using CSS */}
-      <div className="absolute top-1/2 left-0 w-40 h-0.5 bg-blue-500 transform -translate-y-1/2 opacity-80"></div>
-      
-      {/* Curved section */}
-      <div className="absolute top-1/2 left-32 w-8 h-8 border-l-2 border-b-2 border-blue-500 border-dashed transform -translate-y-1/2 rounded-bl-lg"></div>
-      
-      {/* Arrow pointing to the list */}
-      <div className="absolute top-1/2 left-40 w-0 h-0 border-l-3 border-r-3 border-t-3 border-l-transparent border-r-transparent border-t-blue-500 transform -translate-y-1/2"></div>
-
-      {/* Annotation Bubble */}
+      {/* Floating annotation with creative design */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8, x: -20 }}
-        animate={{ opacity: 1, scale: 1, x: 0 }}
-        transition={{ duration: 0.6, delay: 1.8 }}
-        className="absolute top-0 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
+        initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+        whileHover={{ scale: 1.05, rotate: 2 }}
+        className="relative bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 border-2 border-orange-200 dark:border-orange-700 rounded-2xl px-5 py-4 shadow-xl max-w-xs cursor-pointer"
       >
-        <div className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
-          My own tool! 🚀
-        </div>
-        <div className="text-xs text-gray-600 dark:text-gray-400 mb-2">
-          This data comes from Leetrack - a coding practice tracker I built
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-orange-600 dark:text-orange-400 font-medium">Built with</span>
-          <a 
-            href="#projects" 
-            onClick={(e) => {
-              e.preventDefault();
-              const projectsSection = document.getElementById('projects');
-              if (projectsSection) {
-                projectsSection.scrollIntoView({ behavior: 'smooth' });
-              }
+        {/* Floating sparkles around the bubble */}
+        <motion.div
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="absolute -top-2 -right-2 text-orange-400 text-lg"
+        >
+          ✨
+        </motion.div>
+        
+        <motion.div
+          animate={{ 
+            rotate: [360, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 1
+          }}
+          className="absolute -bottom-1 -left-1 text-orange-300 text-sm"
+        >
+          ⭐
+        </motion.div>
+
+        {/* Main content */}
+        <div className="relative z-10">
+          <motion.div 
+            className="text-sm font-bold text-orange-800 dark:text-orange-200 mb-2 flex items-center gap-2"
+            animate={{ 
+              color: ["#ea580c", "#f97316", "#ea580c"]
             }}
-            className="text-xs font-semibold text-orange-700 dark:text-orange-300 hover:text-orange-800 dark:hover:text-orange-200 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+            transition={{ 
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
           >
-            Leetrack
-          </a>
-          <motion.span
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 2 }}
-            className="text-orange-500"
+            <span>My own tool!</span>
+            <motion.span
+              animate={{ 
+                rotate: [0, 20, -20, 0],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{ 
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              🚀
+            </motion.span>
+          </motion.div>
+          
+          <div className="text-xs text-orange-700 dark:text-orange-300 mb-3 leading-relaxed">
+            This data comes from <strong>Leetrack</strong> - a coding practice tracker I built from scratch!
+          </div>
+          
+          <motion.div 
+            className="flex items-center gap-2"
+            whileHover={{ scale: 1.02 }}
           >
-            ✨
-          </motion.span>
+            <span className="text-xs text-orange-600 dark:text-orange-400 font-medium">Built with</span>
+            <a 
+              href="#projects" 
+              onClick={(e) => {
+                e.preventDefault();
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="text-xs font-bold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-400 dark:decoration-orange-500 underline-offset-2 hover:underline-offset-4"
+            >
+              Leetrack
+            </a>
+            <motion.span
+              animate={{ 
+                rotate: [0, 15, -15, 0],
+                scale: [1, 1.3, 1]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+              className="text-orange-500"
+            >
+              ✨
+            </motion.span>
+          </motion.div>
         </div>
+
+        {/* Pulsing background effect */}
+        <motion.div
+          animate={{ 
+            scale: [1, 1.1, 1],
+            opacity: [0.1, 0.3, 0.1]
+          }}
+          transition={{ 
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute inset-0 bg-orange-200 dark:bg-orange-800 rounded-2xl"
+        />
       </motion.div>
     </motion.div>
   );
