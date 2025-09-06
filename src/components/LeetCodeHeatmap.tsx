@@ -55,12 +55,19 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "", 
           throw new Error('User not found');
         } else if (response.status === 403) {
           throw new Error('Profile is private or heatmap is disabled');
+        } else if (response.status === 500) {
+          throw new Error('Leetrack API is temporarily unavailable. Please try again later.');
         } else {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
       }
       
-      const result: HeatmapResponse = await response.json();
+      const result = await response.json();
+      
+      // Check if the response contains an error
+      if (result.error) {
+        throw new Error(result.details || result.error || 'API returned an error');
+      }
       
       if (result.heatmapData && Array.isArray(result.heatmapData)) {
         setData(result.heatmapData);
@@ -223,10 +230,24 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "", 
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="text-center text-red-500 dark:text-red-400">
-          {error}
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm">!</span>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">LeetCode Activity</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">@{username}</p>
+          </div>
         </div>
-        <div className="text-center mt-4">
+        
+        <div className="text-center py-8">
+          <div className="text-4xl mb-4">⚠️</div>
+          <div className="text-red-500 dark:text-red-400 font-medium mb-2">
+            Unable to load data
+          </div>
+          <div className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            {error}
+          </div>
           <button
             onClick={fetchLeetCodeData}
             className="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition-colors duration-200"
