@@ -144,11 +144,11 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "" }
               {week.map((day, dayIndex) => {
                 const level = getIntensityLevel(day.count);
                 const colors = [
-                  'bg-gray-100 dark:bg-gray-800', // 0 submissions
-                  'bg-green-200 dark:bg-green-900', // 1 submission
-                  'bg-green-400 dark:bg-green-700', // 2 submissions
-                  'bg-green-600 dark:bg-green-500', // 3 submissions
-                  'bg-green-800 dark:bg-green-300', // 4+ submissions
+                  'bg-gray-100 dark:bg-gray-700', // 0 submissions
+                  'bg-green-200 dark:bg-green-800', // 1 submission
+                  'bg-green-400 dark:bg-green-600', // 2 submissions
+                  'bg-green-600 dark:bg-green-400', // 3 submissions
+                  'bg-green-800 dark:bg-green-200', // 4+ submissions
                 ];
                 
                 return (
@@ -292,11 +292,11 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "" }
       <div className="flex items-center justify-between text-xs text-gray-600 dark:text-gray-400">
         <span>Less</span>
         <div className="flex gap-1">
-          <div className="w-3 h-3 rounded-sm bg-gray-100 dark:bg-gray-800"></div>
-          <div className="w-3 h-3 rounded-sm bg-green-200 dark:bg-green-900"></div>
-          <div className="w-3 h-3 rounded-sm bg-green-400 dark:bg-green-700"></div>
-          <div className="w-3 h-3 rounded-sm bg-green-600 dark:bg-green-500"></div>
-          <div className="w-3 h-3 rounded-sm bg-green-800 dark:bg-green-300"></div>
+          <div className="w-3 h-3 rounded-sm bg-gray-100 dark:bg-gray-700"></div>
+          <div className="w-3 h-3 rounded-sm bg-green-200 dark:bg-green-800"></div>
+          <div className="w-3 h-3 rounded-sm bg-green-400 dark:bg-green-600"></div>
+          <div className="w-3 h-3 rounded-sm bg-green-600 dark:bg-green-400"></div>
+          <div className="w-3 h-3 rounded-sm bg-green-800 dark:bg-green-200"></div>
         </div>
         <span>More</span>
       </div>
