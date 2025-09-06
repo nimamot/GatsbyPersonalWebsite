@@ -10,6 +10,7 @@ import SEO from "@/components/SEO";
 import LeetCodeCard from "@/components/LeetCodeCard";
 import LeetCodeStats from "@/components/LeetCodeStats";
 import LeetCodeHeatmap from "@/components/LeetCodeHeatmap";
+import ProblemsSolvedList from "@/components/ProblemsSolvedList";
 import GitHubHeatmap from "@/components/GitHubHeatmap";
 
 export default function Home(){
@@ -416,11 +417,21 @@ function About(){
 }
 
 function LeetCodeSection() {
+  const [solvedProblems, setSolvedProblems] = useState<any[]>([]);
+
   return (
     <section className="py-20">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 space-y-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 space-y-8">
         <LeetCodeStats username="nimamot" />
-        <LeetCodeHeatmap username="nimamot" />
+        
+        {/* Heatmap and Problems List Side by Side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <LeetCodeHeatmap 
+            username="nimamot" 
+            onSolvedProblemsChange={setSolvedProblems}
+          />
+          <ProblemsSolvedList problems={solvedProblems} />
+        </div>
       </div>
     </section>
   );

@@ -4,11 +4,19 @@ import { motion } from 'framer-motion';
 interface LeetCodeHeatmapProps {
   username?: string;
   className?: string;
+  onSolvedProblemsChange?: (problems: SolvedProblem[]) => void;
 }
 
 interface ActivityData {
   date: string;
   count: number;
+}
+
+interface SolvedProblem {
+  title: string;
+  difficulty: string;
+  platform: string;
+  solvedAt: string;
 }
 
 interface HeatmapResponse {
@@ -18,11 +26,13 @@ interface HeatmapResponse {
   maxStreak: number;
   currentStreak: number;
   heatmapData: ActivityData[];
+  solvedProblems: SolvedProblem[];
 }
 
-export default function LeetCodeHeatmap({ username = "nimamot", className = "" }: LeetCodeHeatmapProps) {
+export default function LeetCodeHeatmap({ username = "nimamot", className = "", onSolvedProblemsChange }: LeetCodeHeatmapProps) {
   const [data, setData] = useState<ActivityData[]>([]);
   const [stats, setStats] = useState({ totalSubmissions: 0, activeDays: 0, maxStreak: 0 });
+  const [solvedProblems, setSolvedProblems] = useState<SolvedProblem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [tooltip, setTooltip] = useState<{ visible: boolean; x: number; y: number; content: string }>({
@@ -59,6 +69,8 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "" }
           activeDays: result.activeDays,
           maxStreak: result.maxStreak
         });
+        setSolvedProblems(result.solvedProblems || []);
+        onSolvedProblemsChange?.(result.solvedProblems || []);
         setError(null);
       } else {
         throw new Error('No heatmap data available');
