@@ -29,13 +29,13 @@ export default function CogsHoverCard({ children }: CogsHoverCardProps) {
             <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-800"></div>
             
             {/* Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 p-4 max-w-sm w-80">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 p-4 max-w-md w-96">
               {/* Image */}
               <div className="mb-3">
                 <img 
                   src="/static/COGS.png" 
                   alt="Cognitive Systems" 
-                  className="w-full h-32 object-cover rounded-lg"
+                  className="w-full h-40 object-contain rounded-lg bg-gray-50 dark:bg-gray-700 p-2"
                 />
               </div>
               
