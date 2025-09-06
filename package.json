@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-spring/web": "^10.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.6",
     "gatsby": "^5.13.0",
@@ -21,7 +22,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^4.5.9",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-spring": "^10.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.9",
