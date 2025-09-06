@@ -11,7 +11,7 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 1 }}
-      className={`absolute -right-52 bottom-2 z-20 ${className}`}
+      className={`absolute -right-56 top-1/2 transform -translate-y-1/2 z-20 ${className}`}
     >
       {/* Floating annotation with creative design */}
       <motion.div
@@ -83,7 +83,7 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
           </motion.div>
           
           <div className="text-xs text-orange-700 dark:text-orange-300 mb-3 leading-relaxed">
-            This data comes from <strong>Leetrack</strong> - a coding practice tracker I built from scratch!
+            Both the heatmap and problems list come from <strong>Leetrack</strong> - a coding practice tracker I built from scratch!
           </div>
           
           <motion.div 
