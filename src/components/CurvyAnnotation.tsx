@@ -11,31 +11,32 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 1 }}
-      className={`absolute -right-40 bottom-8 z-20 pointer-events-none ${className}`}
+      className={`absolute -right-48 bottom-4 z-20 pointer-events-none ${className}`}
     >
-      {/* Simple visible line first */}
-      <div className="absolute top-1/2 left-0 w-32 h-0.5 bg-blue-500 transform -translate-y-1/2"></div>
+      {/* Test line to make sure something shows */}
+      <div className="absolute top-1/2 left-0 w-40 h-1 bg-red-500 transform -translate-y-1/2"></div>
       
-      {/* Curvy Line SVG with framer-motion animations */}
+      {/* Curvy Line SVG - positioned to connect bubble to list */}
       <svg
-        width="200"
-        height="100"
-        viewBox="0 0 200 100"
+        width="180"
+        height="80"
+        viewBox="0 0 180 80"
         className="absolute"
+        style={{ left: '0px', top: '10px' }}
       >
-        {/* Simple curvy path that should definitely show */}
+        {/* Curvy path connecting bubble to problems list */}
         <path
-          d="M180 50 Q140 20 80 50 T20 50"
+          d="M160 40 Q120 10 60 40 T20 40"
           stroke="#3B82F6"
-          strokeWidth="4"
+          strokeWidth="3"
           fill="none"
           strokeLinecap="round"
-          strokeDasharray="10,5"
+          strokeDasharray="8,4"
         />
         
-        {/* Arrow head pointing to the list */}
+        {/* Arrow head pointing to the problems list */}
         <path
-          d="M15 50 L25 45 L25 55 Z"
+          d="M15 40 L25 35 L25 45 Z"
           fill="#3B82F6"
         />
       </svg>
@@ -45,7 +46,7 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
         initial={{ opacity: 0, scale: 0.8, x: -20 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 1.8 }}
-        className="absolute top-0 left-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
+        className="absolute top-0 right-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 shadow-lg max-w-xs"
       >
         <div className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-1">
           My own tool! 🚀
