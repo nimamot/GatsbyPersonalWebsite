@@ -68,28 +68,97 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
           <p className="text-sm mt-1">Start your coding journey!</p>
         </div>
 
-        {/* Built with Leetrack Badge */}
-        <div className="mt-4 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-xs font-medium text-orange-700 dark:text-orange-300">
-            <span>Built with</span>
-            <a 
-              href="#projects" 
-              onClick={(e) => {
-                e.preventDefault();
-                // Scroll to projects section and highlight Leetrack
-                const projectsSection = document.getElementById('projects');
-                if (projectsSection) {
-                  projectsSection.scrollIntoView({ behavior: 'smooth' });
-                  // Add a small delay to ensure smooth scrolling
-                  setTimeout(() => {
-                    // You could add highlighting logic here if needed
-                  }, 500);
-                }
-              }}
-              className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+        {/* Built with Leetrack Badge with Modern Annotation */}
+        <div className="mt-6 relative">
+          {/* Modern Annotation Pointer */}
+          <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="relative"
             >
-              Leetrack
-            </a>
+              {/* Animated Arrow */}
+              <motion.div
+                animate={{ 
+                  x: [0, 8, 0],
+                  opacity: [0.7, 1, 0.7]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="flex items-center"
+              >
+                <svg 
+                  width="60" 
+                  height="20" 
+                  viewBox="0 0 60 20" 
+                  className="text-blue-500"
+                  fill="none"
+                >
+                  <path
+                    d="M5 10 L50 10 M45 5 L50 10 L45 15"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </motion.div>
+              
+              {/* Floating Annotation Text */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="absolute -top-12 -right-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 shadow-lg"
+              >
+                <div className="text-xs font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
+                  My own tool! 🚀
+                </div>
+                {/* Small triangle pointer */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-200 dark:border-t-gray-600"></div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Enhanced Badge */}
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-sm font-medium text-orange-700 dark:text-orange-300 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+            >
+              <span>Built with</span>
+              <a 
+                href="#projects" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  // Scroll to projects section and highlight Leetrack
+                  const projectsSection = document.getElementById('projects');
+                  if (projectsSection) {
+                    projectsSection.scrollIntoView({ behavior: 'smooth' });
+                    // Add a small delay to ensure smooth scrolling
+                    setTimeout(() => {
+                      // You could add highlighting logic here if needed
+                    }, 500);
+                  }
+                }}
+                className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2 hover:underline-offset-4"
+              >
+                Leetrack
+              </a>
+              <motion.span
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                className="text-orange-600 dark:text-orange-400"
+              >
+                ✨
+              </motion.span>
+            </motion.div>
           </div>
         </div>
       </motion.div>
@@ -173,28 +242,97 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
         </a>
       </div>
 
-      {/* Built with Leetrack Badge */}
-      <div className="mt-4 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-xs font-medium text-orange-700 dark:text-orange-300">
-          <span>Built with</span>
-          <a 
-            href="#projects" 
-            onClick={(e) => {
-              e.preventDefault();
-              // Scroll to projects section and highlight Leetrack
-              const projectsSection = document.getElementById('projects');
-              if (projectsSection) {
-                projectsSection.scrollIntoView({ behavior: 'smooth' });
-                // Add a small delay to ensure smooth scrolling
-                setTimeout(() => {
-                  // You could add highlighting logic here if needed
-                }, 500);
-              }
-            }}
-            className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2"
+      {/* Built with Leetrack Badge with Modern Annotation */}
+      <div className="mt-6 relative">
+        {/* Modern Annotation Pointer */}
+        <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="relative"
           >
-            Leetrack
-          </a>
+            {/* Animated Arrow */}
+            <motion.div
+              animate={{ 
+                x: [0, 8, 0],
+                opacity: [0.7, 1, 0.7]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="flex items-center"
+            >
+              <svg 
+                width="60" 
+                height="20" 
+                viewBox="0 0 60 20" 
+                className="text-blue-500"
+                fill="none"
+              >
+                <path
+                  d="M5 10 L50 10 M45 5 L50 10 L45 15"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </motion.div>
+            
+            {/* Floating Annotation Text */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="absolute -top-12 -right-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 shadow-lg"
+            >
+              <div className="text-xs font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
+                My own tool! 🚀
+              </div>
+              {/* Small triangle pointer */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-200 dark:border-t-gray-600"></div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Badge */}
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-full text-sm font-medium text-orange-700 dark:text-orange-300 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+          >
+            <span>Built with</span>
+            <a 
+              href="#projects" 
+              onClick={(e) => {
+                e.preventDefault();
+                // Scroll to projects section and highlight Leetrack
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                  // Add a small delay to ensure smooth scrolling
+                  setTimeout(() => {
+                    // You could add highlighting logic here if needed
+                  }, 500);
+                }
+              }}
+              className="font-semibold text-orange-800 dark:text-orange-200 hover:text-orange-900 dark:hover:text-orange-100 transition-colors duration-200 underline decoration-orange-300 dark:decoration-orange-600 underline-offset-2 hover:underline-offset-4"
+            >
+              Leetrack
+            </a>
+            <motion.span
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+              className="text-orange-600 dark:text-orange-400"
+            >
+              ✨
+            </motion.span>
+          </motion.div>
         </div>
       </div>
     </motion.div>
