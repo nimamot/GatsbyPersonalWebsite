@@ -13,33 +13,14 @@ export default function CurvyAnnotation({ className = "" }: CurvyAnnotationProps
       transition={{ duration: 0.8, delay: 1 }}
       className={`absolute -right-48 bottom-4 z-20 pointer-events-none ${className}`}
     >
-      {/* Test line to make sure something shows */}
-      <div className="absolute top-1/2 left-0 w-40 h-1 bg-red-500 transform -translate-y-1/2"></div>
+      {/* Simple connecting line using CSS */}
+      <div className="absolute top-1/2 left-0 w-40 h-0.5 bg-blue-500 transform -translate-y-1/2 opacity-80"></div>
       
-      {/* Curvy Line SVG - positioned to connect bubble to list */}
-      <svg
-        width="180"
-        height="80"
-        viewBox="0 0 180 80"
-        className="absolute"
-        style={{ left: '0px', top: '10px' }}
-      >
-        {/* Curvy path connecting bubble to problems list */}
-        <path
-          d="M160 40 Q120 10 60 40 T20 40"
-          stroke="#3B82F6"
-          strokeWidth="3"
-          fill="none"
-          strokeLinecap="round"
-          strokeDasharray="8,4"
-        />
-        
-        {/* Arrow head pointing to the problems list */}
-        <path
-          d="M15 40 L25 35 L25 45 Z"
-          fill="#3B82F6"
-        />
-      </svg>
+      {/* Curved section */}
+      <div className="absolute top-1/2 left-32 w-8 h-8 border-l-2 border-b-2 border-blue-500 border-dashed transform -translate-y-1/2 rounded-bl-lg"></div>
+      
+      {/* Arrow pointing to the list */}
+      <div className="absolute top-1/2 left-40 w-0 h-0 border-l-3 border-r-3 border-t-3 border-l-transparent border-r-transparent border-t-blue-500 transform -translate-y-1/2"></div>
 
       {/* Annotation Bubble */}
       <motion.div
