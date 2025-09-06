@@ -23,10 +23,10 @@ export default function CogsHoverCard({ children }: CogsHoverCardProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem]"
+            className="absolute bottom-full -left-20 sm:left-1/2 sm:transform sm:-translate-x-1/2 mb-3 z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem]"
           >
             {/* Arrow pointing down */}
-            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-blue-50 dark:border-t-gray-800"></div>
+            <div className="absolute top-full left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-blue-50 dark:border-t-gray-800"></div>
             
             {/* Card */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-xl sm:rounded-2xl shadow-2xl border border-blue-200 dark:border-gray-600 p-3 sm:p-6 w-full backdrop-blur-sm">
@@ -55,7 +55,7 @@ export default function CogsHoverCard({ children }: CogsHoverCardProps) {
                   <img 
                     src="/static/COGS.png" 
                     alt="Cognitive Systems Interdisciplinary Diagram" 
-                    className="w-full h-40 sm:h-64 object-cover rounded-xl sm:rounded-2xl drop-shadow-2xl filter brightness-110 contrast-130 saturate-110"
+                    className="w-full h-48 sm:h-64 object-cover rounded-2xl drop-shadow-2xl filter brightness-110 contrast-130 saturate-110"
                   />
                   
                   {/* Decorative corner elements */}
