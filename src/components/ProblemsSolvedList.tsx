@@ -58,8 +58,8 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
             <span className="text-white font-bold text-sm">✓</span>
           </div>
           <div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Problems Solved</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Recent submissions</p>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Recent Solved Problems</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Latest submissions</p>
           </div>
         </div>
         <div className="text-center text-gray-500 dark:text-gray-400 py-8">
@@ -78,15 +78,15 @@ export default function ProblemsSolvedList({ problems, className = "" }: Problem
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-sm">✓</span>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm">✓</span>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Recent Solved Problems</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{problems.length} problems completed</p>
+          </div>
         </div>
-        <div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Problems Solved</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{problems.length} problems completed</p>
-        </div>
-      </div>
 
       <div className="space-y-3 max-h-96 overflow-y-auto">
         {problems
