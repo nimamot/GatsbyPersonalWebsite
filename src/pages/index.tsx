@@ -13,6 +13,7 @@ import LeetCodeHeatmap from "@/components/LeetCodeHeatmap";
 import ProblemsSolvedList from "@/components/ProblemsSolvedList";
 import GitHubHeatmap from "@/components/GitHubHeatmap";
 import CogsHoverCard from "@/components/CogsHoverCard";
+import DataScienceHoverCard from "@/components/DataScienceHoverCard";
 import ClientOnly from "@/components/ClientOnly";
 
 export default function Home(){
@@ -186,10 +187,10 @@ function Hero(){
               Software Engineer
             </div>
           }>
-            <Typewriter 
-              className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium" 
-              phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover", "I like building useful things"]} 
-            />
+          <Typewriter 
+            className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium" 
+            phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover", "I like building useful things"]} 
+          />
           </ClientOnly>
         </div>
         
@@ -409,7 +410,7 @@ function About(){
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Hi there!</h3>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            Hey! I'm Nima, and thanks for stopping by! I'm currently in my 5th year at UBC, majoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Cognitive Systems</span>}><CogsHoverCard><span className="relative inline-block text-purple-600 dark:text-purple-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Cognitive Systems</span></CogsHoverCard></ClientOnly> and minoring in Data Science. When I'm not buried in coursework, you'll probably find me hitting the gym, snapping some photos, or enjoying a good cup of coffee.
+            Hey! I'm Nima, and thanks for stopping by! I'm currently in my 5th year at UBC, majoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Cognitive Systems</span>}><CogsHoverCard><span className="relative inline-block text-purple-600 dark:text-purple-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Cognitive Systems</span></CogsHoverCard></ClientOnly> and minoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Data Science</span>}><DataScienceHoverCard><span className="relative inline-block text-blue-600 dark:text-blue-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Data Science</span></DataScienceHoverCard></ClientOnly>. When I'm not buried in coursework, you'll probably find me hitting the gym, snapping some photos, or enjoying a good cup of coffee.
           </p>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             This site is my little corner of the internet where I share projects, thoughts, and whatever else comes to mind. Feel free to explore around!
@@ -438,7 +439,7 @@ function LeetCodeSection() {
             </div>
           </div>
         }>
-          <LeetCodeStats username="nimamot" />
+        <LeetCodeStats username="nimamot" />
         </ClientOnly>
         
         {/* Heatmap and Problems List Side by Side */}
