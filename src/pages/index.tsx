@@ -828,7 +828,7 @@ function Projects(){
   // Merge and group projects for single-column display
   const allProjects = [
     { section: 'Software Engineering', projects: softwareEngineering },
-    { section: 'Data Science', projects: dataScience }
+    { section: 'Machine Learning & Data Science', projects: dataScience }
   ];
 
   return (
