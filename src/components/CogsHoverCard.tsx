@@ -23,7 +23,7 @@ export default function CogsHoverCard({ children }: CogsHoverCardProps) {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem] -left-20 sm:left-1/2 sm:transform sm:-translate-x-1/2 -top-16 sm:-top-2 sm:bottom-full sm:mb-3"
+            className="absolute z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem] -left-20 sm:left-1/2 sm:transform sm:-translate-x-1/2 bottom-full mb-3"
           >
             {/* Arrow pointing down to the text */}
             <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-b-4 border-l-transparent border-r-transparent border-b-purple-200 dark:border-b-purple-800" />
