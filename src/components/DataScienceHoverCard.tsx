@@ -19,27 +19,17 @@ export default function DataScienceHoverCard({ children }: DataScienceHoverCardP
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="absolute z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem] -left-20 sm:left-0 sm:-top-2 -top-16"
           >
             {/* Arrow pointing to the text */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="absolute left-4 sm:left-6 -bottom-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-200 dark:border-t-blue-800"
-            />
+            <div className="absolute left-4 sm:left-6 -bottom-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-200 dark:border-t-blue-800" />
             
             {/* Main card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 sm:p-6 shadow-2xl backdrop-blur-sm"
-            >
+            <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 sm:p-6 shadow-2xl backdrop-blur-sm">
               {/* Header */}
               <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                 <motion.div
@@ -138,7 +128,7 @@ export default function DataScienceHoverCard({ children }: DataScienceHoverCardP
                 }}
                 className="absolute inset-0 bg-blue-200 dark:bg-blue-800 rounded-2xl pointer-events-none"
               />
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
