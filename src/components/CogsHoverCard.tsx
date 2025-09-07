@@ -9,7 +9,7 @@ export default function CogsHoverCard({ children }: CogsHoverCardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div 
+    <span
       className="relative inline-block"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -22,71 +22,126 @@ export default function CogsHoverCard({ children }: CogsHoverCardProps) {
             initial={{ opacity: 0, scale: 0.8, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-full -left-20 sm:left-1/2 sm:transform sm:-translate-x-1/2 mb-3 z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem]"
+            transition={{ duration: 0.2 }}
+            className="absolute z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem] -left-20 sm:left-0 sm:-top-2 -top-16"
           >
-            {/* Arrow pointing down */}
-            <div className="absolute top-full left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-blue-50 dark:border-t-gray-800"></div>
+            {/* Arrow pointing to the text */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="absolute left-4 sm:left-6 -bottom-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-purple-200 dark:border-t-purple-800"
+            />
             
-            {/* Card */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-700 rounded-xl sm:rounded-2xl shadow-2xl border border-blue-200 dark:border-gray-600 p-3 sm:p-6 w-full backdrop-blur-sm">
-              {/* Header with icon */}
-              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg sm:rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-sm sm:text-lg">🧠</span>
-                </div>
+            {/* Main card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+              className="relative bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 border-2 border-purple-200 dark:border-purple-700 rounded-2xl p-3 sm:p-6 shadow-2xl backdrop-blur-sm"
+            >
+              {/* Header */}
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                <motion.div
+                  animate={{ 
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="text-2xl sm:text-3xl"
+                >
+                  🧠
+                </motion.div>
                 <div>
-                  <h4 className="font-bold text-gray-900 dark:text-white text-sm sm:text-lg">
+                  <h3 className="text-lg sm:text-xl font-bold text-purple-800 dark:text-purple-200">
                     Cognitive Systems
-                  </h4>
-                  <p className="text-xs text-blue-600 dark:text-blue-400 font-medium">
-                    (COGS)
+                  </h3>
+                  <p className="text-xs sm:text-sm text-purple-600 dark:text-purple-400">
+                    My Major at UBC
                   </p>
                 </div>
               </div>
 
               {/* Image */}
-              <div className="mb-4 relative group">
-                {/* Glowing background effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200 dark:from-blue-800 dark:via-indigo-800 dark:to-purple-800 rounded-2xl blur-md opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-                
-                {/* Main image container */}
-                <div className="relative bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-2xl border-2 border-blue-300 dark:border-blue-600 transform group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-                  <img 
-                    src="/static/COGS.png" 
-                    alt="Cognitive Systems Interdisciplinary Diagram" 
-                    className="w-full h-48 sm:h-64 object-cover rounded-2xl drop-shadow-2xl filter brightness-110 contrast-130 saturate-110"
-                  />
-                  
+              <div className="relative mb-3 sm:mb-4">
+                <div className="relative bg-gradient-to-br from-purple-200 to-purple-300 dark:from-purple-700 dark:to-purple-800 rounded-2xl p-1 overflow-hidden">
+                  <div className="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden">
+                    <img 
+                      src="/static/COGS.png" 
+                      alt="Cognitive Systems" 
+                      className="w-full h-48 sm:h-64 object-cover"
+                    />
+                    {/* Inner glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-transparent pointer-events-none" />
+                  </div>
                   {/* Decorative corner elements */}
-                  <div className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
-                  <div className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-indigo-400 rounded-full opacity-60"></div>
+                  <div className="absolute top-2 right-2 w-3 h-3 bg-purple-400/30 rounded-full" />
+                  <div className="absolute bottom-2 left-2 w-2 h-2 bg-purple-500/40 rounded-full" />
                 </div>
               </div>
               
-              {/* Content */}
-              <div className="space-y-2">
-                <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
-                  <span className="font-semibold text-blue-700 dark:text-blue-300">Cognitive Systems (COGS)</span> links <span className="font-semibold text-purple-600 dark:text-purple-400">Computer Science</span> with <span className="font-semibold text-green-600 dark:text-green-400">neuroscience</span>, <span className="font-semibold text-pink-600 dark:text-pink-400">psychology</span>, <span className="font-semibold text-orange-600 dark:text-orange-400">linguistics</span>, and <span className="font-semibold text-indigo-600 dark:text-indigo-400">philosophy</span> to study intelligence.
+              {/* Description */}
+              <div className="space-y-2 sm:space-y-3">
+                <p className="text-xs sm:text-sm text-purple-700 dark:text-purple-300 leading-relaxed">
+                  Cognitive Systems links <span className="font-semibold text-purple-800 dark:text-purple-200">Computer Science</span> with <span className="font-semibold text-purple-800 dark:text-purple-200">neuroscience</span>, <span className="font-semibold text-purple-800 dark:text-purple-200">psychology</span>, <span className="font-semibold text-purple-800 dark:text-purple-200">linguistics</span>, and <span className="font-semibold text-purple-800 dark:text-purple-200">philosophy</span> to study intelligence.
                 </p>
-                <p className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
-                  It focuses on <span className="font-semibold text-blue-600 dark:text-blue-400">computational modeling</span>, <span className="font-semibold text-emerald-600 dark:text-emerald-400">data analysis</span>, and <span className="font-semibold text-rose-600 dark:text-rose-400">human-centered design</span> to connect brain and behavior with <span className="font-semibold text-cyan-600 dark:text-cyan-400">AI</span>, preparing students to build and evaluate <span className="font-semibold text-violet-600 dark:text-violet-400">ML systems</span> for language, vision, and decision making.
+                <p className="text-xs sm:text-sm text-purple-600 dark:text-purple-400 leading-relaxed">
+                  It focuses on <span className="font-semibold">computational modeling</span>, <span className="font-semibold">data analysis</span>, and <span className="font-semibold">human-centered design</span> to connect brain and behavior with AI.
                 </p>
               </div>
 
-              {/* Footer with sparkle */}
-              <div className="mt-2 sm:mt-4 pt-2 sm:pt-3 border-t border-blue-200 dark:border-gray-600 flex items-center justify-center">
-                <span className="text-blue-500 dark:text-blue-400 text-xs font-medium flex items-center gap-1">
-                  <span className="animate-pulse">✨</span>
-                  <span className="hidden sm:inline">Interdisciplinary Excellence</span>
-                  <span className="sm:hidden">Interdisciplinary</span>
-                  <span className="animate-pulse">✨</span>
+              {/* Footer */}
+              <motion.div 
+                className="flex items-center justify-center gap-2 mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-purple-200 dark:border-purple-700"
+                animate={{ 
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <span className="text-xs sm:text-sm text-purple-600 dark:text-purple-400 font-medium">
+                  UBC Major Program
                 </span>
-              </div>
-            </div>
+                <motion.span
+                  animate={{ 
+                    rotate: [0, 360],
+                    scale: [1, 1.2, 1]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  className="text-purple-500 text-sm sm:text-base"
+                >
+                  ✨
+                </motion.span>
+              </motion.div>
+
+              {/* Pulsing background effect */}
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.02, 1],
+                  opacity: [0.1, 0.2, 0.1]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute inset-0 bg-purple-200 dark:bg-purple-800 rounded-2xl pointer-events-none"
+              />
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </span>
   );
 }
