@@ -535,7 +535,7 @@ function Experience(){
               </motion.span>
             </summary>
             
-            <div className="px-4 sm:px-8 pb-8 sm:ml-20 space-y-4">
+            <div className="px-4 sm:px-6 md:px-8 pb-8 space-y-4">
               <ul className="space-y-3 text-gray-700 dark:text-gray-300 text-base sm:text-lg">
                 {it.bullets.map((b, i) => (
                   <motion.li 
@@ -550,6 +550,41 @@ function Experience(){
                   </motion.li>
                 ))}
               </ul>
+              
+              {/* Amazon specific image with annotation */}
+              {it.company === "Amazon" && (
+                <motion.div 
+                  className="mt-4 mb-4 relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <div className="flex flex-col lg:flex-row gap-4 items-start">
+                    <img 
+                      src="/static/Amazon.png" 
+                      alt="Amazon work experience" 
+                      className="w-full max-w-lg lg:max-w-md rounded-lg shadow-sm border border-gray-100 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 p-2"
+                    />
+                    
+                    {/* Handwritten annotation - taller instead of wider */}
+                    <motion.div 
+                      className="flex-1 lg:max-w-sm lg:mt-16"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.4, duration: 0.6 }}
+                    >
+                      <div className="space-y-4">
+                        <div className="text-xl font-bold text-orange-600 dark:text-orange-400 italic">
+                          My favorite Amazonian Concept:
+                        </div>
+                        <div className="text-lg text-orange-600 dark:text-orange-400 leading-relaxed italic">
+                          <span className="font-bold text-orange-700 dark:text-orange-300">Day 1 culture</span> @ Amazon refers to maintaining the startup mindset of constant innovation and customer obsession, treating every day as if it's the beginning of something new.
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              )}
               
               <div className="flex flex-wrap gap-3 pt-4">
                 {it.technologies.map((tech, i) => (
