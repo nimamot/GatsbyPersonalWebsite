@@ -416,7 +416,7 @@ function About(){
             This site is my little corner of the internet where I share projects, thoughts, and whatever else comes to mind. Feel free to explore around!
           </p>
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            If anything catches your eye or you just want to connect, my socials are above and in the footer. Always up for a coffee chat or Formula 1 discussion! :')
+            If anything catches your eye or you just want to connect, my socials are above and in the footer. Always up for a coffee chat! :')
           </p>
         </motion.div>
       </div>
