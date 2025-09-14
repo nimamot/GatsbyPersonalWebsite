@@ -189,7 +189,7 @@ function Hero(){
           }>
           <Typewriter 
             className="text-2xl sm:text-3xl text-gray-500 dark:text-gray-400 mb-10 font-medium" 
-            phrases={["Software Engineer", "Cybersecurity Enthusiast", "Data Scientist", "ML/AI Explorer", "Coffee Lover", "I like building useful things"]} 
+            phrases={["Software Engineer 💻", "Cybersecurity Enthusiast 🔒", "Data Scientist 📊", "ML/AI Explorer 🤖", "Coffee Lover ☕", "I like building useful things 🚀"]} 
           />
           </ClientOnly>
         </div>
