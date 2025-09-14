@@ -23,10 +23,10 @@ export default function DataScienceHoverCard({ children }: DataScienceHoverCardP
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem] -left-20 sm:left-0 sm:-top-2 -top-16"
+            className="absolute z-50 w-[85vw] max-w-xs sm:max-w-lg sm:w-[28rem] -left-20 sm:left-1/2 sm:transform sm:-translate-x-1/2 bottom-full mb-3"
           >
-            {/* Arrow pointing to the text */}
-            <div className="absolute left-4 sm:left-6 -bottom-2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-blue-200 dark:border-t-blue-800" />
+            {/* Arrow pointing down to the text */}
+            <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-b-4 border-l-transparent border-r-transparent border-b-blue-200 dark:border-b-blue-800" />
             
             {/* Main card */}
             <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 sm:p-6 shadow-2xl backdrop-blur-sm">
