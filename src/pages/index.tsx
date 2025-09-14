@@ -560,26 +560,29 @@ function Experience(){
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <div className="flex flex-col lg:flex-row gap-4 items-start">
-                    <img 
-                      src="/static/Amazon.png" 
-                      alt="Amazon work experience" 
-                      className="w-full max-w-lg lg:max-w-md rounded-lg shadow-sm border border-gray-100 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 p-2"
-                    />
+                  <div className="space-y-4">
+                    {/* Image with improved presentation */}
+                    <div className="flex justify-center">
+                      <img 
+                        src="/static/Amazon.png" 
+                        alt="Amazon work experience" 
+                        className="w-full max-w-md rounded-2xl shadow-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 p-2"
+                      />
+                    </div>
                     
-                    {/* Handwritten annotation - taller instead of wider */}
+                    {/* Day 1 Culture note card */}
                     <motion.div 
-                      className="flex-1 lg:max-w-sm lg:mt-16"
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border border-orange-200 dark:border-orange-700 rounded-xl p-4 shadow-sm"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.6 }}
                     >
-                      <div className="space-y-4">
-                        <div className="text-xl font-bold text-orange-600 dark:text-orange-400 italic">
+                      <div className="space-y-3">
+                        <div className="text-lg font-bold text-orange-600 dark:text-orange-400">
                           My favorite Amazonian Concept:
                         </div>
-                        <div className="text-lg text-orange-600 dark:text-orange-400 leading-relaxed italic">
-                          <span className="font-bold text-orange-700 dark:text-orange-300">Day 1 culture</span> @ Amazon refers to maintaining the startup mindset of constant innovation and customer obsession, treating every day as if it's the beginning of something new.
+                        <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                          <span className="font-semibold text-orange-700 dark:text-orange-300">Day 1 culture</span> @ Amazon refers to maintaining the startup mindset of constant innovation and customer obsession, treating every day as if it's the beginning of something new.
                         </div>
                       </div>
                     </motion.div>
