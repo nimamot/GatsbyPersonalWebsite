@@ -699,7 +699,7 @@ function Projects(){
   const more = [
     { title: "Personal Website", desc: "Modern portfolio site with animations and dark mode", tech: "Gatsby • React • TypeScript • Tailwind CSS • Framer Motion", emoji: "🌐", github: "https://github.com/nimamot/GatsbyPersonalWebsite" },
     { title: "Old Personal Website", desc: "Portfolio site with projects and blog", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐", github: "https://github.com/nimamot/Personal-Website" },
-    { title: "La Letra", desc: "Interactive Spanish learning platform that combines music and language education for engaging vocabulary and grammar practice", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🇪🇸", github: "https://nimamot.github.io/Spanish/" },
+    { title: "La Letra", desc: "Spanish learning platform with music integration", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🇪🇸", github: "https://nimamot.github.io/Spanish/" },
     { title: "Earn Ace", desc: "Data analysis on Top 500 tennis players to predict career earnings using KNN-regression model", tech: "R • KNN Regression • Data Analysis • ggplot2 • Statistical Modeling", emoji: "🎾", github: "" },
     { title: "NFT Bazaar", desc: "Java-based NFT marketplace application for buying and selling NFTs", tech: "Java • JSON • NFT Marketplace • User Management", emoji: "🖼️", github: "" },
   ];
