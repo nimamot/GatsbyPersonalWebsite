@@ -1217,7 +1217,7 @@ function Footer(){
               <IconLink href="mailto:nima.motieifard@gmail.com" label="Email">
         <Mail className="h-4 w-4"/> Email
       </IconLink>
-      <span className="mt-2 sm:mt-0 sm:ml-2">© {new Date().getFullYear()} Nima :')</span>
+      <span className="mt-2 sm:mt-0 sm:ml-2">© Nima :')</span>
     </footer>
   );
 }
