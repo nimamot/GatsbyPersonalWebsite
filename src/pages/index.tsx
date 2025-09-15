@@ -653,15 +653,6 @@ function Projects(){
       color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20",
       image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=200" // iOS Messenger (phone chat)
     },
-    {
-      title: "La Letra",
-      subtitle: "Spanish learning with music",
-      desc: "Interactive Spanish learning platform that combines music and language education for engaging vocabulary and grammar practice.\n\n<div class=\"my-6\"><img src=\"/static/laLetra.png\" alt=\"La Letra Spanish Learning Platform Screenshot\" class=\"w-full max-w-2xl mx-auto rounded-lg shadow-lg border border-gray-200 dark:border-gray-700\" /></div>\n\n<div class=\"mt-6\"><h3 class=\"text-xl font-bold text-gray-900 dark:text-white mb-4\">🚀 Key Features & Tech Stack</h3><div class=\"space-y-4\"><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-blue-600 dark:text-blue-400 font-semibold sm:w-40 flex-shrink-0\">🎵 Song Learning</span><span class=\"text-gray-700 dark:text-gray-300 sm:flex-1\">Interactive platform using music to teach Spanish vocabulary and grammar in an engaging and memorable way</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-green-600 dark:text-green-400 font-semibold sm:w-40 flex-shrink-0\">🌐 Web App</span><span class=\"text-gray-700 dark:text-gray-300 sm:flex-1\">Django-powered backend with HTML and CSS frontend for responsive user experience across all devices</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-purple-600 dark:text-purple-400 font-semibold sm:w-40 flex-shrink-0\">☁️ Cloud Hosting</span><span class=\"text-gray-700 dark:text-gray-300 sm:flex-1\">PythonAnywhere hosting for reliable and accessible online learning platform with 24/7 availability</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-orange-600 dark:text-orange-400 font-semibold sm:w-40 flex-shrink-0\">📚 Content</span><span class=\"text-gray-700 dark:text-gray-300 sm:flex-1\">Structured lessons and practice exercises integrated with musical content for comprehensive learning</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-pink-600 dark:text-pink-400 font-semibold sm:w-40 flex-shrink-0\">🎨 Interface</span><span class=\"text-gray-700 dark:text-gray-300 sm:flex-1\">Intuitive design for seamless learning experience across different devices with user-friendly navigation</span></div></div></div>",
-      tech: "Django • HTML • CSS • PythonAnywhere",
-      link: "https://nimamot.github.io/Spanish/",
-      color: "from-orange-50 to-red-100 dark:from-orange-900/20 dark:to-red-900/20",
-      image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg"
-    },
   ];
 
   const dataScience = [
@@ -708,6 +699,7 @@ function Projects(){
   const more = [
     { title: "Personal Website", desc: "Modern portfolio site with animations and dark mode", tech: "Gatsby • React • TypeScript • Tailwind CSS • Framer Motion", emoji: "🌐", github: "https://github.com/nimamot/GatsbyPersonalWebsite" },
     { title: "Old Personal Website", desc: "Portfolio site with projects and blog", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🌐", github: "https://github.com/nimamot/Personal-Website" },
+    { title: "La Letra", desc: "Interactive Spanish learning platform that combines music and language education for engaging vocabulary and grammar practice", tech: "Django • HTML • CSS • PythonAnywhere", emoji: "🇪🇸", github: "https://nimamot.github.io/Spanish/" },
     { title: "Earn Ace", desc: "Data analysis on Top 500 tennis players to predict career earnings using KNN-regression model", tech: "R • KNN Regression • Data Analysis • ggplot2 • Statistical Modeling", emoji: "🎾", github: "" },
     { title: "NFT Bazaar", desc: "Java-based NFT marketplace application for buying and selling NFTs", tech: "Java • JSON • NFT Marketplace • User Management", emoji: "🖼️", github: "" },
   ];
