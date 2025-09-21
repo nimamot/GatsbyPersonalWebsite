@@ -48,7 +48,9 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "", 
       setLoading(true);
       setError(null);
       
-      const response = await fetch(`https://leetrack.vercel.app/api/public/heatmap/${username}`);
+      // Add cache-busting parameter to force fresh data
+      const cacheBuster = new Date().getTime();
+      const response = await fetch(`https://leetrack.vercel.app/api/public/heatmap/${username}?t=${cacheBuster}`);
       
       if (!response.ok) {
         if (response.status === 404) {
@@ -93,8 +95,8 @@ export default function LeetCodeHeatmap({ username = "nimamot", className = "", 
   useEffect(() => {
     fetchLeetCodeData();
     
-    // Auto-refresh every 5 minutes
-    const interval = setInterval(fetchLeetCodeData, 5 * 60 * 1000);
+    // Auto-refresh every 2 minutes
+    const interval = setInterval(fetchLeetCodeData, 2 * 60 * 1000);
     
     return () => clearInterval(interval);
   }, [username]);
