@@ -692,7 +692,7 @@ function Projects(){
       link: "#",
       github: "https://github.com/nimamot/SportsStats",
       color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
-      image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" // Sports analytics dashboard
+      image: "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&h=400&fit=crop" // Soccer ball on grass
     },
   ];
   
