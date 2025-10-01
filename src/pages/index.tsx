@@ -682,7 +682,7 @@ function Projects(){
       tech: "Python • Machine Learning • XGBoost • CatBoost • LSTM • Time Series • Feature Engineering",
       link: "https://github.com/nimamot/Price_prediction",
       color: "from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20",
-      image: "https://www.ccn.com/wp-content/uploads/2025/07/bitcoin-price-breakout-or-breakdown-1536x864.webp" // Bitcoin coin and chart
+      image: "https://www.coindesk.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2Feb12c46130372d2c8db092b83551e82563e39e0d-1508x1131.jpg%3Fauto%3Dformat&w=3840&q=75" // Bitcoin coin and chart
     },
     {
       title: "Sports Hub",
