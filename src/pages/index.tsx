@@ -673,7 +673,7 @@ function Projects(){
       tech: "AWS Lambda • S3 • DynamoDB • Python • Data Science • Cloud Computing",
       link: "https://github.com/nimamot/AWS-Financial-Data-Pipeline",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
-      image: "https://www.learnfly.com/img/post_img/2003632983_fi010-image.jpg" // Cloud data pipeline
+      image: "https://www.learnfly.com/img/post_img/2003632983_fi010-image.jpg" 
     },
     {
       title: "Bitcoin Price Prediction",
