@@ -482,11 +482,13 @@ function Experience(){
       location: "Vancouver, BC",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
       bullets: [
-        "Built a centralized localization system for an internal platform, enabling consistent multilingual support across diverse page types",
-        "Integrated with internal APIs and tools to sync user language preferences and ensure seamless cross-platform behavior",
-        "Leveraged AWS infrastructure to automate translation workflows and improve reliability across dev and deployment environments"
+        "Architected and deployed a centralized language translation platform, resolving system fragmentation and expanding support to over 30 languages for internal enterprise tools supporting a global workforce.",
+        "Developed the front-end language selector UI and back-end API logic to establish cross-domain persistence via custom HTTP cookies, ensuring 100% consistent language display across all services and pages.",
+        "Streamlined team onboarding by modifying the core CDK template and SDK to grant new pages automatic, non-disruptive access to the translation service, reducing integration time by 90% across partner teams.",
+        "Managed the feature lifecycle from development to production, collaborating with partner teams to implement robust feature-flagging and configuration promotion for seamless deployment to thousands of internal users."
+
       ],
-      technologies: ["React", "AWS", "Node.js", "TypeScript"]
+      technologies: ["TypeScript", "React", "AWS (lambda, S3, SDK, CDK, KSM, Secrete Maneger)", "GraphQL", "Node.js", "i18next", "CI/CD Integration"]
     },
   ];
   
