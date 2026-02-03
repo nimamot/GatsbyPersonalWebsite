@@ -476,6 +476,19 @@ function LeetCodeSection() {
 function Experience(){
   const items = [
     { 
+      company: "University of British Columbia", 
+      role: "Undergraduate Researcher", 
+      when: "Jan 2026 - Present", 
+      location: "Vancouver, BC",
+      logo: "https://cdn.freebiesupply.com/logos/large/2x/ubc-logo-png-transparent.png",
+      bullets: [
+        "Built an agent-based LLM pipeline for large-scale thematic analysis, coordinating coder, critic, and synthesizer agents for labeling, validation, and conflict resolution across qualitative text.",
+        "Implemented critique and reconciliation passes to improve output consistency across documents and reduce contradictory results during iterative development."
+
+      ],
+      technologies: ["TypeScript", "React", "AWS (lambda, S3, SDK, CDK, KSM, Secrete Maneger)", "GraphQL", "Node.js", "i18next", "CI/CD Integration"]
+    },
+    { 
       company: "Amazon", 
       role: "Software Engineer Intern", 
       when: "May 2024 - Aug 2024", 
@@ -490,6 +503,7 @@ function Experience(){
       ],
       technologies: ["TypeScript", "React", "AWS (lambda, S3, SDK, CDK, KSM, Secrete Maneger)", "GraphQL", "Node.js", "i18next", "CI/CD Integration"]
     },
+
   ];
   
   return (
