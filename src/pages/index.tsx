@@ -486,7 +486,7 @@ function Experience(){
         "Implemented critique and reconciliation passes to improve output consistency across documents and reduce contradictory results during iterative development."
 
       ],
-      technologies: ["TypeScript", "React", "AWS (lambda, S3, SDK, CDK, KSM, Secrete Maneger)", "GraphQL", "Node.js", "i18next", "CI/CD Integration"]
+      technologies: []
     },
     { 
       company: "Amazon", 
