@@ -1,9 +1,27 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 interface LoadingScreenProps {
   isLoading: boolean;
 }
+
+const FULL_NAME = "Nima Motieifard";
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.05 },
+  },
+};
+
+const letter = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
   if (!isLoading) return null;
@@ -15,74 +33,38 @@ export default function LoadingScreen({ isLoading }: LoadingScreenProps) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="text-center">
+      <div className="text-center px-4">
         <motion.div
-          className="mb-8"
-          animate={{ 
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, -5, 0]
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          className="flex flex-wrap justify-center gap-x-0.5 sm:gap-x-1 gap-y-1 max-w-[min(100%,56rem)] mx-auto"
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          aria-label={`Loading, ${FULL_NAME}`}
         >
-          {/* Hand-drawn character */}
-          <div className="relative w-24 h-24 mx-auto mb-6">
-            {/* Head */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gray-800 rounded-full"></div>
-            
-            {/* Hair */}
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-14 h-8 bg-gray-900 rounded-full -mt-1"></div>
-            
-            {/* Eyes */}
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-            </div>
-            
-            {/* Smile */}
-            <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-3 h-1 border-b-2 border-white rounded-full"></div>
-            
-            {/* Body/Robe */}
-            <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-16 h-12 bg-purple-600 rounded-t-full"></div>
-            
-            {/* Belt */}
-            <div className="absolute top-18 left-1/2 transform -translate-x-1/2 w-14 h-2 bg-purple-400 rounded-full"></div>
-            
-            {/* Arms and hands */}
-            <div className="absolute top-12 left-2 w-3 h-8 bg-purple-600 rounded-full transform -rotate-12">
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full"></div>
-            </div>
-            <div className="absolute top-12 right-2 w-3 h-8 bg-purple-600 rounded-full transform rotate-12">
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full"></div>
-            </div>
-            
-            {/* Legs */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex gap-2">
-              <div className="w-3 h-4 bg-gray-800 rounded-full"></div>
-              <div className="w-3 h-4 bg-gray-800 rounded-full"></div>
-            </div>
-          </div>
+          {FULL_NAME.split("").map((char, i) => (
+            <motion.span
+              key={i}
+              variants={letter}
+              className={`inline-block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white select-none ${
+                char === " " ? "w-2 sm:w-3 md:w-4" : ""
+              }`}
+            >
+              {char === " " ? "\u00a0" : char}
+            </motion.span>
+          ))}
         </motion.div>
-        
-        <motion.h1
-          className="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          LOADING...
-        </motion.h1>
-        
+
         <motion.div
-          className="w-32 h-1 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto overflow-hidden"
+          className="mt-10 sm:mt-12 w-40 sm:w-48 h-1 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.35, duration: 0.3 }}
         >
           <motion.div
             className="h-full bg-purple-600 rounded-full"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ duration: 3, ease: "easeInOut" }}
+            transition={{ duration: 2.4, ease: "easeInOut" }}
           />
         </motion.div>
       </div>
