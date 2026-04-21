@@ -481,6 +481,9 @@ function Experience(){
       when: "Jan 2026 - Present", 
       location: "Vancouver, BC",
       logo: "https://cdn.freebiesupply.com/logos/large/2x/ubc-logo-png-transparent.png",
+      /** Full-color crest: avoid invert; use a light tile in dark mode so navy reads */
+      invertInDark: false,
+      lightBackdropInDark: true,
       bullets: [
         "Built an agent-based LLM pipeline for large-scale thematic analysis, coordinating coder, critic, and synthesizer agents for labeling, validation, and conflict resolution across qualitative text.",
         "Implemented critique and reconciliation passes to improve output consistency across documents and reduce contradictory results during iterative development."
@@ -494,6 +497,7 @@ function Experience(){
       when: "May 2024 - Aug 2024", 
       location: "Vancouver, BC",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      invertInDark: true,
       bullets: [
         "Architected and deployed a centralized language translation platform, resolving system fragmentation and expanding support to over 30 languages for internal enterprise tools supporting a global workforce.",
         "Developed the front-end language selector UI and back-end API logic to establish cross-domain persistence via custom HTTP cookies, ensuring 100% consistent language display across all services and pages.",
@@ -521,11 +525,17 @@ function Experience(){
           >
             <summary className="flex cursor-pointer list-none items-start justify-between p-4 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 sm:flex-1 min-w-0">
-                <div className="w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center">
+                <div
+                  className={`w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0 flex items-center justify-center ${
+                    it.lightBackdropInDark
+                      ? "dark:rounded-xl dark:bg-white dark:p-2 dark:shadow-sm dark:ring-1 dark:ring-black/10"
+                      : ""
+                  }`}
+                >
                   <img 
                     src={it.logo} 
                     alt={`${it.company} logo`} 
-                    className="w-full h-full object-contain dark:invert"
+                    className={`w-full h-full object-contain ${it.invertInDark ? "dark:invert" : ""}`}
                   />
                 </div>
                 <div className="sm:flex-1 min-w-0">
