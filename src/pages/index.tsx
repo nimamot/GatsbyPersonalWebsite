@@ -32,7 +32,8 @@ export default function Home(){
         "https://www.ccn.com/wp-content/uploads/2025/07/bitcoin-price-breakout-or-breakdown-1536x864.webp",
         "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80",
         "/static/robotics.png",
-        "/static/photography.png"
+        "/static/photography.png",
+        "/static/run.jpeg"
       ];
 
       try {
@@ -1046,10 +1047,10 @@ function Fun(){
   const sideQuests = [
     { id: "robotics", emoji: "🤖", label: "Robotics", desc: "Building & programming" },
     { id: "muaythai", emoji: "🥋", label: "Muay Thai", desc: "Kickboxing & clinch work" },
+    { id: "running", emoji: "🏃", label: "Running", desc: "Miles & mid-run tangents" },
     { id: "photography", emoji: "📸", label: "Photography", desc: "Street & portrait shots" },
     { id: "basketball", emoji: "🏀", label: "Basketball", desc: "Pickup games & shooting" },
     { id: "finance", emoji: "💰", label: "Personal Finance", desc: "Budgeting & investing" },
-    { id: "markets", emoji: "📈", label: "Financial Markets", desc: "Trading & analysis" },
     { id: "traveling", emoji: "✈️", label: "Traveling", desc: "Exploring new places" },
   ];
 
@@ -1057,7 +1058,9 @@ function Fun(){
     title: string;
     subtitle: string;
     description: string;
+    descriptionClassName?: string;
     image: string;
+    imageFit?: "cover" | "contain";
     achievements?: string[];
     link: string;
     linkText: string;
@@ -1108,13 +1111,16 @@ function Fun(){
       link: "https://link.blossomsocial.com/7uYa/dj5z7gwa",
       linkText: "Follow My Investment Journey"
     },
-    markets: {
-      title: "Financial Markets 📈",
-      subtitle: "Trading & analysis",
-      description: "Stocks go up, stocks go down, and I’m here for the ride. I enjoy reading charts, making wild predictions, and pretending I’m on Wall Street (from my laptop, in pajamas).",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200&auto=format&fit=crop",
+    running: {
+      title: "Running 🏃",
+      subtitle: "",
+      description:
+        "Just enough movement to call it exercise, just enough conversation to derail the whole thing.",
+      descriptionClassName: "text-sm leading-relaxed",
+      image: "/static/run.jpeg",
+      imageFit: "cover",
       link: "#",
-      linkText: "Market Analysis"
+      linkText: "Race Log"
     },
     traveling: {
       title: "Traveling ✈️",
@@ -1138,7 +1144,7 @@ function Fun(){
         transition={{ duration: 0.6 }}
         className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto"
       >
-        There's more to life than just work and school so I'm a strong advocate for side quests in life :). From martial arts to financial markets, here are some of my notable adventures (click around!) ✨:
+        There's more to life than just work and school so I'm a strong advocate for side quests in life :). From martial arts to weekend miles, here are some of my notable adventures (click around!) ✨:
       </motion.p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -1201,7 +1207,9 @@ function Fun(){
               </motion.div>
               <div>
                 <div className="font-semibold text-gray-900 dark:text-white">{currentContent.title}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-300">{currentContent.subtitle}</div>
+                {currentContent.subtitle ? (
+                  <div className="text-sm text-gray-600 dark:text-gray-300">{currentContent.subtitle}</div>
+                ) : null}
               </div>
             </div>
             
@@ -1209,9 +1217,15 @@ function Fun(){
               <img 
                 src={currentContent.image} 
                 alt={currentContent.title}
-                className="w-full h-48 sm:h-64 md:h-80 object-contain rounded-lg mb-4"
+                className={`w-full h-48 sm:h-64 md:h-80 rounded-lg mb-4 bg-gray-100 dark:bg-gray-800 ${
+                  currentContent.imageFit === "cover"
+                    ? "object-contain lg:object-cover"
+                    : "object-contain"
+                }`}
               />
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p
+                className={`text-gray-600 dark:text-gray-300 mb-4 ${currentContent.descriptionClassName ?? "text-base"}`}
+              >
                 {currentContent.description}
               </p>
 
