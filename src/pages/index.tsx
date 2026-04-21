@@ -484,6 +484,12 @@ function Experience(){
       /** Full-color crest: avoid invert; use a light tile in dark mode so navy reads */
       invertInDark: false,
       lightBackdropInDark: true,
+      link: "https://agentic-ta-viz.vercel.app",
+      github: "https://github.com/nimamot/Thematic_Analysis_Main",
+      supervisor: {
+        name: "Jian Zhu",
+        url: "https://linguistics.ubc.ca/profile/jian-zhu/",
+      },
       bullets: [
         "Built an agent-based LLM pipeline for large-scale thematic analysis, coordinating coder, critic, and synthesizer agents for labeling, validation, and conflict resolution across qualitative text.",
         "Implemented critique and reconciliation passes to improve output consistency across documents and reduce contradictory results during iterative development."
@@ -548,6 +554,20 @@ function Experience(){
                     <div className="hidden sm:block text-lg text-gray-500 dark:text-gray-500">•</div>
                     <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.when}</div>
                   </div>
+                  {it.supervisor && (
+                    <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mt-1">
+                      Supervisor:{" "}
+                      <a
+                        href={it.supervisor.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {it.supervisor.name}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
               <motion.span 
@@ -577,6 +597,33 @@ function Experience(){
                   </motion.li>
                 ))}
               </ul>
+
+              {(it.link || it.github) && (
+                <div className="flex flex-wrap items-center gap-4 sm:gap-5 pt-1">
+                  {it.link && (
+                    <a
+                      href={it.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-blue-600 dark:text-blue-400 hover:underline font-medium text-sm sm:text-base"
+                    >
+                      <ExternalLink className="h-4 w-4 shrink-0" aria-hidden />
+                      Research library
+                    </a>
+                  )}
+                  {it.github && (
+                    <a
+                      href={it.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium text-sm sm:text-base"
+                    >
+                      <Github className="h-4 w-4 shrink-0" aria-hidden />
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              )}
               
               {/* Amazon specific image with annotation */}
               {it.company === "Amazon" && (
