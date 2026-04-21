@@ -33,7 +33,8 @@ export default function Home(){
         "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80",
         "/static/robotics.png",
         "/static/photography.png",
-        "/static/run.jpeg"
+        "/static/run.jpeg",
+        "/static/main_me.jpeg"
       ];
 
       try {
@@ -401,24 +402,40 @@ function About(){
             </motion.a>
         </motion.div>
       </div>
-      <div className="mt-16 max-w-3xl mx-auto">
+      <div className="mt-16 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800/90 p-6 sm:p-8 md:p-10 shadow-sm"
         >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Hi there!</h3>
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            Hey! I'm Nima, and thanks for stopping by! I'm currently in my 5th year at UBC, majoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Cognitive Systems</span>}><CogsHoverCard><span className="relative inline-block text-purple-600 dark:text-purple-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Cognitive Systems</span></CogsHoverCard></ClientOnly> and minoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Data Science</span>}><DataScienceHoverCard><span className="relative inline-block text-blue-600 dark:text-blue-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Data Science</span></DataScienceHoverCard></ClientOnly>. When I'm not buried in coursework, you'll probably find me hitting the gym, snapping some photos, or enjoying a good cup of coffee.
-          </p>
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            This site is my little corner of the internet where I share projects, thoughts, and whatever else comes to mind. Feel free to explore around!
-          </p>
-          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            If anything catches your eye or you just want to connect, my socials are above and in the footer. Always up for a coffee chat! :')
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            <div className="lg:col-span-7 space-y-6">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Hi there!</h3>
+              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                Hey! I'm Nima, and thanks for stopping by! I'm currently in my 5th year at UBC, majoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Cognitive Systems</span>}><CogsHoverCard><span className="relative inline-block text-purple-600 dark:text-purple-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Cognitive Systems</span></CogsHoverCard></ClientOnly> and minoring in <ClientOnly fallback={<span className="text-blue-600 dark:text-blue-400 font-semibold">Data Science</span>}><DataScienceHoverCard><span className="relative inline-block text-blue-600 dark:text-blue-400 font-semibold cursor-help animate-pulse hover:animate-none transition-all duration-300" style={{animation: 'gentle-wiggle 3s ease-in-out infinite'}}>Data Science</span></DataScienceHoverCard></ClientOnly>. When I'm not buried in coursework, you'll probably find me hitting the gym, snapping some photos, or enjoying a good cup of coffee.
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                This site is my little corner of the internet where I share projects, thoughts, and whatever else comes to mind. Feel free to explore around!
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                If anything catches your eye or you just want to connect, my socials are above and in the footer. Always up for a coffee chat! :')
+              </p>
+            </div>
+            <div className="lg:col-span-5 flex justify-center lg:justify-end lg:pt-1">
+              <div className="w-full max-w-[280px] sm:max-w-xs lg:max-w-none lg:w-full">
+                <div className="rounded-2xl overflow-hidden ring-2 ring-pink-400/50 dark:ring-pink-400/45 shadow-lg shadow-pink-500/20 dark:shadow-pink-950/40">
+                  <img
+                    src="/static/main_me.jpeg"
+                    alt="Nima Motieifard"
+                    className="w-full aspect-[3/4] object-cover object-center"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
       
