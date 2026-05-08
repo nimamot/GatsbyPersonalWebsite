@@ -493,6 +493,19 @@ function LeetCodeSection() {
 
 function Experience(){
   const items = [
+    {
+      company: "RBC Global Asset Management",
+      role: "Quality Assurance Automation Engineer Intern",
+      when: "May 2026 - Present",
+      location: "Global Asset Management, Vancouver",
+      logo: "/static/RBC Logo.png",
+      invertInDark: false,
+      lightBackdropInDark: true,
+      bullets: [
+        "Incoming internship focused on quality assurance automation and test reliability for products in the Global Asset Management organization."
+      ],
+      technologies: []
+    },
     { 
       company: "University of British Columbia", 
       role: "Undergraduate Researcher", 
