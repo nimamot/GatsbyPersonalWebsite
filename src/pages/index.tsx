@@ -502,7 +502,9 @@ function Experience(){
       invertInDark: false,
       lightBackdropInDark: true,
       bullets: [
-        "Incoming internship focused on quality assurance automation and test reliability for products in the Global Asset Management organization."
+        "Developed and maintained automated testing workflows using Python and Playwright for financial applications, helping validate UI behavior, APIs, and end-to-end system functionality across trading and asset management platforms.",
+        "Performed manual and automated quality assurance testing by validating workflows, investigating defects, verifying database and API responses, and ensuring data consistency across interconnected enterprise systems.",
+        "Contributed to improving testing efficiency and reliability by building repeatable automation suites, supporting CI/CD-style validation processes, and reducing the time required for large-scale regression and workflow testing."
       ],
       technologies: []
     },
