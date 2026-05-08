@@ -500,7 +500,8 @@ function Experience(){
       location: "Global Asset Management, Vancouver, BC",
       logo: "/static/RBC Logo.png",
       invertInDark: false,
-      lightBackdropInDark: true,
+      lightBackdropInDark: false,
+      logoClassName: "scale-125",
       bullets: [
         "Developed and maintained automated testing workflows using Python and Playwright for financial applications, helping validate UI behavior, APIs, and end-to-end system functionality across trading and asset management platforms.",
         "Performed manual and automated quality assurance testing by validating workflows, investigating defects, verifying database and API responses, and ensuring data consistency across interconnected enterprise systems.",
@@ -574,18 +575,20 @@ function Experience(){
                   <img 
                     src={it.logo} 
                     alt={`${it.company} logo`} 
-                    className={`w-full h-full object-contain ${it.invertInDark ? "dark:invert" : ""}`}
+                    className={`w-full h-full object-contain ${it.invertInDark ? "dark:invert" : ""} ${it.logoClassName ?? ""}`}
                   />
                 </div>
                 <div className="sm:flex-1 min-w-0">
                   <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{it.role} @ {it.company}</div>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mt-2">
-                    <div className="flex items-center gap-2">
-                    <div className="w-4 h-4 text-red-500">📍</div>
+                  <div className="mt-2 grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] md:items-center gap-y-1 md:gap-x-3">
+                    <div className="flex items-start gap-2 min-w-0">
+                      <div className="w-4 h-4 text-red-500 mt-0.5">📍</div>
                       <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.location}</div>
                     </div>
-                    <div className="hidden sm:block text-lg text-gray-500 dark:text-gray-500">•</div>
-                    <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 whitespace-nowrap shrink-0">{it.when}</div>
+                    <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 md:whitespace-nowrap md:justify-self-end">
+                      <span className="hidden md:inline text-lg text-gray-500 dark:text-gray-500 mr-2">•</span>
+                      {it.when}
+                    </div>
                   </div>
                   {it.supervisor && (
                     <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mt-1">
