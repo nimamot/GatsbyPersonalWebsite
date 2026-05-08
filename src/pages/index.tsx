@@ -497,7 +497,7 @@ function Experience(){
       company: "RBC",
       role: "Quality Assurance Automation Engineer Intern",
       when: "May 2026 - Present",
-      location: "Global Asset Management, Vancouver",
+      location: "Global Asset Management, Vancouver, BC",
       logo: "/static/RBC Logo.png",
       invertInDark: false,
       lightBackdropInDark: true,
@@ -512,7 +512,7 @@ function Experience(){
       company: "University of British Columbia", 
       role: "Undergraduate Researcher", 
       when: "Jan 2026 - Present", 
-      location: "Vancouver, BC",
+      location: "Faculty of Computer Science, Vancouver, BC",
       logo: "https://cdn.freebiesupply.com/logos/large/2x/ubc-logo-png-transparent.png",
       /** Full-color crest: avoid invert; use a light tile in dark mode so navy reads */
       invertInDark: false,
