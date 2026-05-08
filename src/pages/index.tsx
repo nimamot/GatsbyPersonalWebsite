@@ -494,7 +494,7 @@ function LeetCodeSection() {
 function Experience(){
   const items = [
     {
-      company: "RBC Global Asset Management",
+      company: "RBC",
       role: "Quality Assurance Automation Engineer Intern",
       when: "May 2026 - Present",
       location: "Global Asset Management, Vancouver",
