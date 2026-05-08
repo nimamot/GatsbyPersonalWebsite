@@ -534,7 +534,7 @@ function Experience(){
       company: "Amazon", 
       role: "Software Engineer Intern", 
       when: "May 2024 - Aug 2024", 
-      location: "Vancouver, BC",
+      location: "Recruiting Systems Technologies, Vancouver, BC",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
       invertInDark: true,
       bullets: [
@@ -585,7 +585,7 @@ function Experience(){
                       <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.location}</div>
                     </div>
                     <div className="hidden sm:block text-lg text-gray-500 dark:text-gray-500">•</div>
-                    <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.when}</div>
+                    <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 whitespace-nowrap shrink-0">{it.when}</div>
                   </div>
                   {it.supervisor && (
                     <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mt-1">
