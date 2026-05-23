@@ -20,7 +20,9 @@ export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time and preload images
+    const MIN_LOAD_MS = 900;
+    const MAX_LOAD_MS = 1600;
+
     const preloadImages = async () => {
       const imageUrls = [
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80",
@@ -37,30 +39,32 @@ export default function Home(){
         "/static/main_me.jpeg"
       ];
 
-      try {
-        await Promise.all(
-          imageUrls.map(url => {
-            return new Promise((resolve) => {
+      const preloadAll = Promise.all(
+        imageUrls.map(
+          (url) =>
+            new Promise<void>((resolve) => {
               try {
                 const img = new Image();
-                img.onload = () => resolve(null);
-                img.onerror = () => resolve(null); // Don't fail if image doesn't load
+                img.onload = () => resolve();
+                img.onerror = () => resolve();
                 img.src = url;
-              } catch (error) {
-                console.log('Error creating image:', error);
-                resolve(null);
+              } catch {
+                resolve();
               }
-            });
-          })
-        );
-      } catch (error) {
-        console.log('Some images failed to preload');
-      }
+            })
+        )
+      );
 
-      // Minimum loading time of 2 seconds
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
+      const minDelay = new Promise<void>((resolve) =>
+        setTimeout(resolve, MIN_LOAD_MS)
+      );
+
+      await Promise.race([
+        Promise.all([preloadAll, minDelay]),
+        new Promise<void>((resolve) => setTimeout(resolve, MAX_LOAD_MS)),
+      ]);
+
+      setIsLoading(false);
     };
 
     preloadImages();

@@ -3,6 +3,10 @@ node_modules/
 
 # Build output
 .cache/
+public/page-data/
+public/_gatsby/
+public/chunk-map.json
+public/webpack.stats.json
 
 # Logs
 npm-debug.log*
