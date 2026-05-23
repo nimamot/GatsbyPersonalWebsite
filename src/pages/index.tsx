@@ -20,54 +20,8 @@ export default function Home(){
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const MIN_LOAD_MS = 900;
-    const MAX_LOAD_MS = 1600;
-
-    const preloadImages = async () => {
-      const imageUrls = [
-        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80",
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80",
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=200&q=80",
-        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=200",
-        "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg",
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=200&q=80",
-        "https://www.ccn.com/wp-content/uploads/2025/07/bitcoin-price-breakout-or-breakdown-1536x864.webp",
-        "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80",
-        "/static/robotics.png",
-        "/static/photography.png",
-        "/static/run.jpeg",
-        "/static/main_me.jpeg"
-      ];
-
-      const preloadAll = Promise.all(
-        imageUrls.map(
-          (url) =>
-            new Promise<void>((resolve) => {
-              try {
-                const img = new Image();
-                img.onload = () => resolve();
-                img.onerror = () => resolve();
-                img.src = url;
-              } catch {
-                resolve();
-              }
-            })
-        )
-      );
-
-      const minDelay = new Promise<void>((resolve) =>
-        setTimeout(resolve, MIN_LOAD_MS)
-      );
-
-      await Promise.race([
-        Promise.all([preloadAll, minDelay]),
-        new Promise<void>((resolve) => setTimeout(resolve, MAX_LOAD_MS)),
-      ]);
-
-      setIsLoading(false);
-    };
-
-    preloadImages();
+    const id = window.setTimeout(() => setIsLoading(false), 380);
+    return () => window.clearTimeout(id);
   }, []);
 
   return (

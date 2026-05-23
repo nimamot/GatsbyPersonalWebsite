@@ -121,20 +121,39 @@
   }
 }
 
-@keyframes loader-orb-drift {
-  0%,
+@keyframes loader-name-shimmer {
+  0% {
+    background-position: 100% center;
+  }
   100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(12px, -10px) scale(1.08);
+    background-position: 0% center;
   }
 }
 
-.loader-orb {
-  animation: loader-orb-drift 2.8s ease-in-out infinite;
+.loader-name-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    #111827 0%,
+    #111827 35%,
+    #7c3aed 50%,
+    #111827 65%,
+    #111827 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: loader-name-shimmer 0.55s ease-in-out 1 forwards;
 }
 
-.loader-orb-b {
-  animation-delay: 0.6s;
+.dark .loader-name-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    #f9fafb 0%,
+    #f9fafb 35%,
+    #a78bfa 50%,
+    #f9fafb 65%,
+    #f9fafb 100%
+  );
 }
+
