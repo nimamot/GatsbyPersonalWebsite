@@ -472,10 +472,11 @@ function Experience(){
       role: "Undergraduate Researcher", 
       when: "Jan 2026 - Present", 
       location: "Faculty of Computer Science, Vancouver, BC",
-      logo: "https://cdn.freebiesupply.com/logos/large/2x/ubc-logo-png-transparent.png",
-      /** Full-color crest: avoid invert; use a light tile in dark mode so navy reads */
+      logo: "/static/UBC.png",
+      /** Modern UBC shield already has a solid navy background; no invert or backdrop tile needed */
       invertInDark: false,
-      lightBackdropInDark: true,
+      lightBackdropInDark: false,
+      logoClassName: "rounded-xl",
       link: "https://agentic-ta-viz.vercel.app",
       github: "https://github.com/nimamot/Thematic_Analysis_Main",
       supervisor: {
@@ -690,7 +691,7 @@ function Projects(){
       link: "https://leetrack.vercel.app/",
       github: "https://github.com/nimamot/leetrack",
       color: "from-indigo-50 to-purple-100 dark:from-indigo-900/20 dark:to-purple-900/20",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=200&q=80" // Coding dashboard/analytics
+      image: "/static/leetrack-cover.jpg"
     },
     {
       title: "TripExpense",
@@ -700,7 +701,7 @@ function Projects(){
       link: "#",
       github: "https://github.com/nimamot/TripExpense",
       color: "from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=200&q=80" // Travel/expense tracking
+      image: "/static/trip-cover.jpg"
     },
     {
       title: "peerAdvice (nwHacks Hackathon)",
@@ -709,7 +710,7 @@ function Projects(){
       tech: "Python • Flask • PostgreSQL • Google OAuth • Firebase • Calendly API • HTML • CSS • JavaScript",
       link: "https://github.com/nimamot/peer_Advice",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=200&q=80" // Teamwork/peer advice
+      image: "/static/peerAdvice.png"
     },
     {
       title: "mAssenger (Featured by Brain Station)",
@@ -718,7 +719,7 @@ function Projects(){
       tech: "Swift • Ruby • Firebase • iOS",
       link: "https://github.com/nimamot/Massenger", 
       color: "from-purple-50 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20",
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=200&q=200" // iOS Messenger (phone chat)
+      image: "/static/Massenger.png"
     },
   ];
 
@@ -731,16 +732,16 @@ function Projects(){
       link: "https://quantalgo.streamlit.app",
       github: "https://github.com/shariqimran/Quant",
       color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=200&q=80" // Trading charts
+      image: "/static/quant-cover.jpg"
     },
     {
       title: "Automated Financial Analysis Pipeline",
       subtitle: "Cloud-based financial analytics",
-      desc: "Designed and implemented a scalable data pipeline using AWS Lambda, S3, and DynamoDB to automate financial statement analysis and generate comprehensive reports.\n\n<div class=\"my-6\"><img src=\"https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80\" alt=\"Automated Financial Analysis Pipeline Screenshot\" class=\"w-full max-w-4xl mx-auto rounded-lg shadow-lg border border-gray-200 dark:border-gray-700\" /></div>\n\n<div class=\"mt-6\"><h3 class=\"text-xl font-bold text-gray-900 dark:text-white mb-4\">🚀 Key Features & Tech Stack</h3><div class=\"space-y-4\"><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-blue-600 dark:text-blue-400 font-semibold sm:sm:w-40 flex-shrink-0\">☁️ Cloud Infrastructure</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">AWS Lambda, S3, and DynamoDB for scalable data processing and storage with serverless architecture</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-green-600 dark:text-green-400 font-semibold sm:sm:w-40 flex-shrink-0\">📊 Data Processing</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Automated analysis of user-uploaded CSV financial statements with comprehensive reporting and insights</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-purple-600 dark:text-purple-400 font-semibold sm:sm:w-40 flex-shrink-0\">🔍 Analytics</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Flagged transaction detection, spending trend visualization, and recurring transaction analysis</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-orange-600 dark:text-orange-400 font-semibold sm:sm:w-40 flex-shrink-0\">📄 Report Generation</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Automated creation of detailed financial analysis reports for end users with professional formatting</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-pink-600 dark:text-pink-400 font-semibold sm:sm:w-40 flex-shrink-0\">🐍 Python Stack</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Leveraged Python for data processing, visualization, and machine learning insights with robust libraries</span></div></div></div>",
+      desc: "Designed and implemented a scalable data pipeline using AWS Lambda, S3, and DynamoDB to automate financial statement analysis and generate comprehensive reports.\n\n<div class=\"my-6\"><img src=\"/static/financialPipeline.png\" alt=\"Automated Financial Analysis Pipeline Screenshot\" class=\"w-full max-w-4xl mx-auto rounded-lg shadow-lg border border-gray-200 dark:border-gray-700\" /></div>\n\n<div class=\"mt-6\"><h3 class=\"text-xl font-bold text-gray-900 dark:text-white mb-4\">🚀 Key Features & Tech Stack</h3><div class=\"space-y-4\"><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-blue-600 dark:text-blue-400 font-semibold sm:sm:w-40 flex-shrink-0\">☁️ Cloud Infrastructure</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">AWS Lambda, S3, and DynamoDB for scalable data processing and storage with serverless architecture</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-green-600 dark:text-green-400 font-semibold sm:sm:w-40 flex-shrink-0\">📊 Data Processing</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Automated analysis of user-uploaded CSV financial statements with comprehensive reporting and insights</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-purple-600 dark:text-purple-400 font-semibold sm:sm:w-40 flex-shrink-0\">🔍 Analytics</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Flagged transaction detection, spending trend visualization, and recurring transaction analysis</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-orange-600 dark:text-orange-400 font-semibold sm:sm:w-40 flex-shrink-0\">📄 Report Generation</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Automated creation of detailed financial analysis reports for end users with professional formatting</span></div><div class=\"flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4\"><span class=\"text-pink-600 dark:text-pink-400 font-semibold sm:sm:w-40 flex-shrink-0\">🐍 Python Stack</span><span class=\"text-gray-700 dark:text-gray-300 sm:sm:flex-1\">Leveraged Python for data processing, visualization, and machine learning insights with robust libraries</span></div></div></div>",
       tech: "AWS Lambda • S3 • DynamoDB • Python • Data Science • Cloud Computing",
       link: "https://github.com/nimamot/AWS-Financial-Data-Pipeline",
       color: "from-blue-50 to-cyan-100 dark:from-blue-900/20 dark:to-cyan-900/20",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=200&q=80"
+      image: "/static/finpipeline-cover.jpg"
     },
     {
       title: "Bitcoin Price Prediction",
@@ -749,7 +750,7 @@ function Projects(){
       tech: "Python • Machine Learning • XGBoost • CatBoost • LSTM • Time Series • Feature Engineering",
       link: "https://github.com/nimamot/Price_prediction",
       color: "from-yellow-50 to-orange-100 dark:from-yellow-900/20 dark:to-orange-900/20",
-      image: "https://www.coindesk.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fs3y3vcno%2Fproduction%2Feb12c46130372d2c8db092b83551e82563e39e0d-1508x1131.jpg%3Fauto%3Dformat&w=3840&q=75" // Bitcoin coin and chart
+      image: "/static/bitcoin-cover.jpg"
     },
     {
       title: "Sports Hub",
@@ -759,7 +760,7 @@ function Projects(){
       link: "#",
       github: "https://github.com/nimamot/SportsStats",
       color: "from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20",
-      image: "https://www.heart.org/-/media/Images/News/2022/November-2022/1118SoccerBrainHealth_SC.jpg?sc_lang=en" // Soccer brain health image
+      image: "/static/sports-cover.jpg"
     },
   ];
   
@@ -1076,7 +1077,7 @@ function Fun(){
       title: "Muay Thai 🥋",
       subtitle: "The art of eight limbs",
       description: "I get punched (and punch back) for fun! Muay Thai is my way to blow off steam, learn cool moves, and occasionally discover new bruises. It’s sweaty, tough, and honestly, a blast.",
-      image: "https://i.pinimg.com/736x/32/5e/32/325e3232df8554cb14020ef6deaa1630.jpg",
+      image: "/static/muaythai.jpg",
       link: "#",
       linkText: "Training Journey"
     },
@@ -1092,7 +1093,7 @@ function Fun(){
       title: "Basketball 🏀",
       subtitle: "Teamwork & strategy",
       description: "I’m not making the NBA, but I love a good pickup game. Sometimes I hit threes, sometimes I trip over my own feet. Either way, it’s all about the laughs and high-fives.",
-      image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=1200&auto=format&fit=crop",
+      image: "/static/basketball.jpg",
       link: "#",
       linkText: "Game Highlights"
     },
