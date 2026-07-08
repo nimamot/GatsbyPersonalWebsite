@@ -7,10 +7,6 @@ import Typewriter from "@/components/Typewriter";
 import { SectionHeader, Card, Divider } from "@/components/Section";
 import LoadingScreen from "@/components/LoadingScreen";
 import SEO from "@/components/SEO";
-import LeetCodeCard from "@/components/LeetCodeCard";
-import LeetCodeStats from "@/components/LeetCodeStats";
-import LeetCodeHeatmap from "@/components/LeetCodeHeatmap";
-import ProblemsSolvedList from "@/components/ProblemsSolvedList";
 import GitHubHeatmap from "@/components/GitHubHeatmap";
 import CogsHoverCard from "@/components/CogsHoverCard";
 import DataScienceHoverCard from "@/components/DataScienceHoverCard";
@@ -40,8 +36,6 @@ export default function Home(){
           <Projects />
           <Divider />
           <Fun />
-          <Divider />
-          <LeetCodeSection />
           <Divider />
           <Contact />
           <Footer />
@@ -397,54 +391,6 @@ function About(){
         </motion.div>
       </div>
       
-    </section>
-  );
-}
-
-function LeetCodeSection() {
-  const [solvedProblems, setSolvedProblems] = useState<any[]>([]);
-
-  return (
-    <section className="py-20">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 space-y-8">
-        <ClientOnly fallback={
-          <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
-            <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-              <div className="text-4xl mb-2">🧠</div>
-              <p>Loading LeetCode stats...</p>
-            </div>
-          </div>
-        }>
-        <LeetCodeStats username="nimamot" />
-        </ClientOnly>
-        
-        {/* Heatmap and Problems List Side by Side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <ClientOnly fallback={
-            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
-              <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-                <div className="text-4xl mb-2">📊</div>
-                <p>Loading activity heatmap...</p>
-              </div>
-            </div>
-          }>
-            <LeetCodeHeatmap 
-              username="nimamot" 
-              onSolvedProblemsChange={setSolvedProblems}
-            />
-          </ClientOnly>
-          <ClientOnly fallback={
-            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6 shadow-sm">
-              <div className="text-center text-gray-500 dark:text-gray-400 py-8">
-                <div className="text-4xl mb-2">✓</div>
-                <p>Loading solved problems...</p>
-              </div>
-            </div>
-          }>
-            <ProblemsSolvedList problems={solvedProblems} />
-          </ClientOnly>
-        </div>
-      </div>
     </section>
   );
 }
