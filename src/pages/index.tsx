@@ -398,6 +398,16 @@ function About(){
 function Experience(){
   const items = [
     {
+      company: "Amazon",
+      role: "Software Engineer",
+      when: "Sep 2026 - Present",
+      location: "",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      invertInDark: true,
+      bullets: [],
+      technologies: []
+    },
+    {
       company: "RBC",
       role: "Quality Assurance Automation Engineer Intern",
       when: "May 2026 - Present",
@@ -486,10 +496,10 @@ function Experience(){
                 <div className="sm:flex-1 min-w-0">
                   <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{it.role} @ {it.company}</div>
                   <div className="mt-2 grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto] md:items-center gap-y-1 md:gap-x-3">
-                    <div className="flex items-start gap-2 min-w-0">
+                    {it.location && <div className="flex items-start gap-2 min-w-0">
                       <div className="w-4 h-4 text-red-500 mt-0.5">📍</div>
                       <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400">{it.location}</div>
-                    </div>
+                    </div>}
                     <div className="text-base sm:text-lg text-gray-600 dark:text-gray-400 md:whitespace-nowrap md:justify-self-end">
                       <span className="hidden md:inline text-lg text-gray-500 dark:text-gray-500 mr-2">•</span>
                       {it.when}
@@ -567,7 +577,7 @@ function Experience(){
               )}
               
               {/* Amazon specific image with annotation */}
-              {it.company === "Amazon" && (
+              {it.company === "Amazon" && it.role === "Software Engineer Intern" && (
                 <motion.div 
                   className="mt-4 mb-4 relative"
                   initial={{ opacity: 0, y: 20 }}
