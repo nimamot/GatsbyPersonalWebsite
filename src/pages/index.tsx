@@ -992,9 +992,10 @@ function ProjectCard({ title, desc, tech, link, emoji, color, index }: {
 }
 
 function Fun(){
-  const [selectedActivity, setSelectedActivity] = useState("robotics");
+  const [selectedActivity, setSelectedActivity] = useState("tennis");
 
   const sideQuests = [
+    { id: "tennis", emoji: "🎾", label: "Tennis", desc: "Rallies & questionable serves" },
     { id: "robotics", emoji: "🤖", label: "Robotics", desc: "Building & programming" },
     { id: "muaythai", emoji: "🥋", label: "Muay Thai", desc: "Kickboxing & clinch work" },
     { id: "running", emoji: "🏃", label: "Running", desc: "Miles & mid-run tangents" },
@@ -1052,6 +1053,14 @@ function Fun(){
       image: "/static/basketball.jpg",
       link: "#",
       linkText: "Game Highlights"
+    },
+    tennis: {
+      title: "Tennis 🎾",
+      subtitle: "Love means nothing. A good rally means everything.",
+      description: "Chasing down tennis balls is my preferred form of cardio with consequences. Some days the backhand shows up; other days, I’m generously donating balls to the next court. I’m here for the long rallies, the wildly optimistic drop shots, and saying ‘one more set’ like I don’t have things to do. If we’re keeping score, I suddenly have a very bad memory. 😅",
+      image: "/tennis.jpg",
+      link: "#",
+      linkText: "Court Time"
     },
     finance: {
       title: "Personal Finance 💰",
@@ -1156,7 +1165,7 @@ function Fun(){
                 {currentContent.title.split(' ').pop()}
               </motion.div>
               <div>
-                <div className="font-semibold text-gray-900 dark:text-white">{currentContent.title}</div>
+                <div className="font-semibold text-gray-900 dark:text-white">{currentContent.title.split(' ').slice(0, -1).join(' ')}</div>
                 {currentContent.subtitle ? (
                   <div className="text-sm text-gray-600 dark:text-gray-300">{currentContent.subtitle}</div>
                 ) : null}
